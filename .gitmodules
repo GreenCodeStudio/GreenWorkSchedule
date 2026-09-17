@@ -1,0 +1,21 @@
+[submodule "modules/ApiDocs"]
+	path = modules/ApiDocs
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Apidocs.git
+[submodule "modules/CommonBase"]
+	path = modules/CommonBase
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Commonbase.git
+[submodule "modules/Authorization"]
+	path = modules/Authorization
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Authorization.git
+[submodule "modules/User"]
+	path = modules/User
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-User.git
+[submodule "modules/Notifications"]
+	path = modules/Notifications
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Notifications.git
+[submodule "modules/Search"]
+	path = modules/Search
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Search.git
+[submodule "modules/ExternalApplication"]
+	path = modules/ExternalApplication
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Externalapplication.git
