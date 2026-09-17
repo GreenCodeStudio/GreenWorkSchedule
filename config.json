@@ -1,0 +1,12 @@
+{
+    "packages": {
+        "ApiDocs": "https://github.com/GreenCodeStudio/GreenCodeFramework-Apidocs.git",
+        "Core": "https://github.com/GreenCodeStudio/GreenCodeFramework-Core.git",
+        "CommonBase": "https://github.com/GreenCodeStudio/GreenCodeFramework-Commonbase.git",
+        "Authorization": "https://github.com/GreenCodeStudio/GreenCodeFramework-Authorization.git",
+        "User": "https://github.com/GreenCodeStudio/GreenCodeFramework-User.git",
+        "Notifications": "https://github.com/GreenCodeStudio/GreenCodeFramework-Notifications.git",
+        "Search": "https://github.com/GreenCodeStudio/GreenCodeFramework-Search.git",
+        "ExternalApplication": "https://github.com/GreenCodeStudio/GreenCodeFramework-Externalapplication.git"
+    }
+}
