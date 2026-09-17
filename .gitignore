@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+public_html/
+vendor/
+tmp/
+cache/
+.env.local
