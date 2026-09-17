@@ -1,0 +1,26 @@
+<form>
+    <div class="topBarButtons">
+        <a href=("/WorkScheduleItem/edit/":item.id) class="button action-edit"><span class="icon-edit"></span>{{t("CommonBase.edit")}}</a>
+    </div>
+    <div class="grid page-WorkScheduleItem page-WorkScheduleItem-show">
+        <input name="id" type="hidden" />
+        <section class=("card action-":type) data-width="6">
+            <header>
+                <h1>{{t("WorkSchedule.WorkScheduleItem.WorkScheduleItem")}}</h1>
+            </header>
+          <div class="pseudoLabel">
+            <span>{{t("WorkSchedule.WorkScheduleItem.user_id")}}:</span>
+            <strong>{{item.user_id}}</strong>
+        </div><div class="pseudoLabel">
+            <span>{{t("WorkSchedule.WorkScheduleItem.work_schedule_id")}}:</span>
+            <strong>{{item.work_schedule_id}}</strong>
+        </div><div class="pseudoLabel">
+            <span>{{t("WorkSchedule.WorkScheduleItem.start")}}:</span>
+            <strong>{{item.start}}</strong>
+        </div><div class="pseudoLabel">
+            <span>{{t("WorkSchedule.WorkScheduleItem.end")}}:</span>
+            <strong>{{item.end}}</strong>
+        </div>
+        </section>
+    </div>
+</form>
