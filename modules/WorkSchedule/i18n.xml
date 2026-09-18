@@ -1,2 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root><node name="WorkSchedule"><node name="WorkSchedule"><value lang="en">WorkSchedule</value></node><node name="id"><value lang="en">id</value></node><node name="name"><value lang="en">name</value></node></node><node name="WorkScheduleList"><node name="header"><value lang="en">List of elements of type WorkSchedule</value></node></node><node name="WorkScheduleItem"><node name="WorkScheduleItem"><value lang="en">WorkScheduleItem</value></node><node name="id"><value lang="en">id</value></node><node name="user_id"><value lang="en">user_id</value></node><node name="work_schedule_id"><value lang="en">work_schedule_id</value></node><node name="start"><value lang="en">start</value></node><node name="end"><value lang="en">end</value></node></node><node name="WorkScheduleItemList"><node name="header"><value lang="en">List of elements of type WorkScheduleItem</value></node></node></root>
+<root>
+    <node name="WorkSchedule">
+        <node name="WorkSchedule">
+            <value lang="en">WorkSchedule</value>
+        </node>
+        <node name="id">
+            <value lang="en">id</value>
+        </node>
+        <node name="name">
+            <value lang="en">name</value>
+        </node>
+    </node>
+    <node name="WorkScheduleList">
+        <node name="header">
+            <value lang="en">List of elements of type WorkSchedule</value>
+        </node>
+    </node>
+    <node name="WorkScheduleItem">
+        <node name="WorkScheduleItem">
+            <value lang="en">WorkScheduleItem</value>
+        </node>
+        <node name="id">
+            <value lang="en">id</value>
+        </node>
+        <node name="user">
+            <value lang="en">Worker</value>
+            <value lang="pl">Pracownik</value>
+            <value lang="de">Arbeiter</value>
+        </node>
+        <node name="work_schedule_id">
+            <value lang="en">work_schedule_id</value>
+        </node>
+        <node name="date">
+            <value lang="en">Date</value>
+            <value lang="pl">Data</value>
+            <value lang="de">Datum</value>
+        </node>
+        <node name="start">
+            <value lang="en">Start</value>
+            <value lang="pl">Początek</value>
+            <value lang="de">Anfang</value>
+        </node>
+        <node name="end">
+            <value lang="en">End</value>
+            <value lang="pl">Koniec</value>
+            <value lang="de">Ende</value>
+        </node>
+    </node>
+    <node name="WorkScheduleItemList">
+        <node name="header">
+            <value lang="pl">Harmonogram</value>
+            <value lang="en">Work schedule</value>
+            <value lang="de">Arbeitsplan</value>
+        </node>
+    </node>
+</root>

@@ -32,8 +32,13 @@ class WorkScheduleItem extends \Core\BussinesLogic
         $ret = [];
         $ret['user_id'] = $data->user_id;
         $ret['work_schedule_id'] = empty($data->work_schedule_id) ? null : $data->work_schedule_id;
-        $ret['start'] = $data->start;
-        $ret['end'] = $data->end;
+        $ret['start'] = $data->date.' '.$data->start;
+        $ret['end'] = $data->date.' '.$data->end;
+        if ($ret['end'] <= $ret['start']) {
+            $end = new \DateTime($ret['end']);
+            $end->modify('+1 day');
+            $ret['end'] = $end->format('Y-m-d H:i:s');
+        }
 
         return $ret;
     }
@@ -67,6 +72,15 @@ class WorkScheduleItem extends \Core\BussinesLogic
         $options->start = 0;
         $options->limit = 1000000;
         $rows = $this->defaultDB->getDataTable($options)['rows'];
-        return (new UniversalExporter('WorkScheduleItem'))->export($type, $rows, fn($row)=>[new UeItem('start', 'Start', $row->start), new UeItem('end', 'End', $row->end)]);
+        return (new UniversalExporter('WorkScheduleItem'))->export($type, $rows, fn($row) => [new UeItem('start', 'Start', $row->start), new UeItem('end', 'End', $row->end)]);
+    }
+
+    public function getToEdit(int $id)
+    {
+        $ret = $this->defaultDB->getById($id);
+        $ret->date = substr($ret->start, 0, 10);
+        $ret->start = substr($ret->start, 11);
+        $ret->end = substr($ret->end, 11);
+        return $ret;
     }
 }

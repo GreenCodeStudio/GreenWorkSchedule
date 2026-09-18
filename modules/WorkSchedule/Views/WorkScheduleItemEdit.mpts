@@ -10,17 +10,24 @@
                 <h1>{{t("WorkSchedule.WorkScheduleItem.WorkScheduleItem")}}</h1>
             </header>
           <label>
-            <span>{{t("WorkSchedule.WorkScheduleItem.user_id")}}</span>
+            <span>{{t("WorkSchedule.WorkScheduleItem.user")}}</span>
             <select data-foreign-key="user" name="user_id" required > </select>
-        </label><label>
-            <span>{{t("WorkSchedule.WorkScheduleItem.work_schedule_id")}}</span>
-            <select data-foreign-key="work_schedule" name="work_schedule_id"  > </select>
-        </label><label>
+        </label>
+<!--        <label>-->
+<!--            <span>{{t("WorkSchedule.WorkScheduleItem.work_schedule_id")}}</span>-->
+<!--            <select data-foreign-key="work_schedule" name="work_schedule_id"  > </select>-->
+<!--        </label>-->
+        <label>
+            <span>{{t("WorkSchedule.WorkScheduleItem.date")}}</span>
+            <input type="date" step="any" name="date" required />
+        </label>
+        <label>
             <span>{{t("WorkSchedule.WorkScheduleItem.start")}}</span>
-            <input type="datetime-local" step="any" name="start" required />
-        </label><label>
+            <input type="time" step="any" name="start" required />
+        </label>
+        <label>
             <span>{{t("WorkSchedule.WorkScheduleItem.end")}}</span>
-            <input type="datetime-local" step="any" name="end" required />
+            <input type="time" step="any" name="end" required />
         </label>
         </section>
     </div>

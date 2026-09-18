@@ -17,18 +17,13 @@ export class index {
         objectsList.allowTableEdit = true;
         objectsList.columns = [];
         objectsList.columns.push({
-            name: t('WorkScheduleItem.user_id'),
-            dataName: 'user_id',
-            sortName: 'user_id',
+            name: t('WorkScheduleItem.user'),
+            dataName: 'user',
+            sortName: 'user',
             width: 100,
-            widthGrow: 1
-        });
-        objectsList.columns.push({
-            name: t('WorkScheduleItem.work_schedule_id'),
-            dataName: 'work_schedule_id',
-            sortName: 'work_schedule_id',
-            width: 100,
-            widthGrow: 1
+            widthGrow: 1,
+            content:row=>row.user.name+' '+row.user.surname
+
         });
         objectsList.columns.push({
             name: t('WorkScheduleItem.start'),
@@ -64,9 +59,8 @@ export class index {
         };
         objectsList.calendarRowCallback = (row) => {
             const element = create('div');
-            element.append(create('div', {text: row.start.substring(11)}));
-            element.append(create('div', {text: row.end.substring(11)}));
-            element.append(create('div', {text: row.user_id}));
+            element.append(create('div', {text: row.start.substring(11)+'-'+row.end.substring(11)}));
+            element.append(create('div', {text: row.user.name+' '+row.user.surname}));
             return element;
         }
         objectsList.generateExports = UniversalExporter.generateObjectsListsExports(objectsList, '/WorkScheduleItem/export');

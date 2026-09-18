@@ -33,7 +33,7 @@ class WorkScheduleItemController extends \Common\PageStandardController
     {
         $this->will('WorkScheduleItem', 'edit');
         $WorkScheduleItem = new \WorkSchedule\WorkScheduleItem();
-        $data = $WorkScheduleItem->getById($id);
+        $data = $WorkScheduleItem->getToEdit($id);
         if ($data == null)
             throw new NotFoundException();
         return ['WorkScheduleItem' => $data,'selects'=>$WorkScheduleItem->getSelects()];
