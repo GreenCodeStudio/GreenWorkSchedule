@@ -1,4 +1,5 @@
 <?php
+
 namespace WorkSchedule\Ajax;
 
 class WorkScheduleItemAjax extends \Core\AjaxController
@@ -16,9 +17,9 @@ class WorkScheduleItemAjax extends \Core\AjaxController
         $WorkScheduleItem = new \WorkSchedule\WorkScheduleItem();
         $WorkScheduleItem->update($data->id, $data);
     }
-    
+
     public function updateMultiple(array $data)
-    {      
+    {
         $this->will('WorkScheduleItem', 'edit');
         $WorkScheduleItem = new \WorkSchedule\WorkScheduleItem();
         foreach ($data as $row) {

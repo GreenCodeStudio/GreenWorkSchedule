@@ -11,6 +11,7 @@
                   "merge-plugin":  {
                                        "include":  [
                                                        "modules/Authorization/composer.json",
+                                                       "modules/CommonBase/composer.json",
                                                        "modules/Core/composer.json",
                                                        "modules/Notifications/composer.json",
                                                        "modules/Search/composer.json"

@@ -105,9 +105,9 @@
     "@babel/types" "^7.29.7"
 
 "@babel/parser@^7.29.7", "@babel/parser@^7.29.8":
-  version "7.29.8"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.29.8.tgz#9653716a2f10c677b98fbc63d4bfb000c302cf17"
-  integrity sha512-E8lTAYNB1KW+FH+VGJuZM1ioAx2E6oVlvQFRrf5P8ZZmsiJXYAD9vTFV7yyEURNzgh1dFqMZuO6tUwcARbqFCA==
+  version "7.29.9"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.29.9.tgz#e7ee0a24f752c5296c6455855ccb72662e67ea96"
+  integrity sha512-CjXrNHTnvqBVqHgdBysY3vk2T8tpJHb5/RMeHJBTyVa9xgugCB0CJTx/3oO8RV2QRQP391RWpB7D6hLjm8V9uA==
   dependencies:
     "@babel/types" "^7.29.8"
 
@@ -177,10 +177,10 @@
   dependencies:
     "@xmldom/xmldom" "^0.8.11"
 
-"@green-code-studio/objects-list@^1.7.1":
-  version "1.9.7"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.9.7.tgz#1ab677cdb15796405e6eb4a655c8d4e035d747ec"
-  integrity sha512-60XeSgIPebhhjypk1B6U8MpY3HIqWjfbJUNxAkU7uTnyED1DmbMsM1VdAPJaoxtYOgD/szJdcR3Cn6WSQAyPEw==
+"@green-code-studio/objects-list@^1.10.1":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.11.0.tgz#d965556ba36259c33ae2588a619acf4bd8bf5ca5"
+  integrity sha512-4puec3Lshfa+tLIoBwfkzf5cg+sWjjiTqRB+KP9JJoudT2F2YSiZMOJ9/z1ossgWzONOFRYPQRo6PKPJPvsqoQ==
   dependencies:
     "@green-code-studio/context-menu" "^1.0.2"
     "@green-code-studio/internationalization" "^1.0.4"
@@ -1481,9 +1481,9 @@ dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.427:
-  version "1.5.430"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.430.tgz#788eada5bbfda8095a95149184368a2bb4fb8e4a"
-  integrity sha512-e1QEj72Y4zd8RlNZVmoTg+iCOSVwpk05IOiiQwdrkwCSVlZfPthevErhE+nckGd2YbsXfp1SkisznhGVIXP2NQ==
+  version "1.5.431"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.431.tgz#dad0cd11dc4dee9ae0d677e5e7ac6bc42b489204"
+  integrity sha512-AAVihz2YwJeOdAynX8MUtqpvjY0gaiARp/7+r4kwqgzqXMrfG1qDN7vwT80uxAoOQRPcZH8t73EI+CA/1OJN8A==
 
 emitter-component@^1.1.1:
   version "1.1.2"
@@ -3305,9 +3305,9 @@ webpack-sources@^3.5.1:
   integrity sha512-jyuiGJdtvY434z5bUZrjz67v76/ePNvFZTp9Mdz29IlH4+GPsgyGjiv0fKI+M7BdkU6ADjulUcKAd3tUK3WlEw==
 
 webpack@^5.91.0:
-  version "5.111.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.111.0.tgz#65e7e0044d69373ea0129ef401c0299aaba52764"
-  integrity sha512-A2R74kfE6b3eLKS91iZiol03Ebx7avmJJBOyiP+4LePW9NNeNJGQkKeSQos4dk6R4H0YAMYlv+aOrs1CyWT3eA==
+  version "5.111.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.111.1.tgz#7c12cd014fbb9bfd8509a6cfc6f1c79f4e06cade"
+  integrity sha512-cNypaz0RP+S4cvQVi1M/3bRUkvNP0xZpL0TjFx+c6jg64VbxD+2weWDgY9UnjRI6dhZgtaj8DU76GGFcJ79xPQ==
   dependencies:
     "@types/estree" "^1.0.8"
     "@types/json-schema" "^7.0.15"

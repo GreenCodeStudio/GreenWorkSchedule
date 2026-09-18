@@ -6,6 +6,7 @@ import {t} from "../../i18n.xml";
 import {t as TCommonBase} from "../../../CommonBase/i18n.xml";
 import {ObjectsList} from "../../../Core/js/ObjectsList/objectsList";
 import {Permissions} from "../../../Core/js/permissions";
+import {UniversalExporter} from "../../../CommonBase/js/UniversalExporter";
 
 export class index {
     constructor(page, data) {
@@ -14,25 +15,28 @@ export class index {
         let objectsList = new ObjectsList(datasource);
         objectsList.allowTableEdit = true;
         objectsList.columns = [];
-                objectsList.columns.push({
+        objectsList.columns.push({
             name: t('WorkScheduleItem.user_id'),
             dataName: 'user_id',
             sortName: 'user_id',
             width: 100,
             widthGrow: 1
-        });        objectsList.columns.push({
+        });
+        objectsList.columns.push({
             name: t('WorkScheduleItem.work_schedule_id'),
             dataName: 'work_schedule_id',
             sortName: 'work_schedule_id',
             width: 100,
             widthGrow: 1
-        });        objectsList.columns.push({
+        });
+        objectsList.columns.push({
             name: t('WorkScheduleItem.start'),
             dataName: 'start',
             sortName: 'start',
             width: 100,
             widthGrow: 1
-        });        objectsList.columns.push({
+        });
+        objectsList.columns.push({
             name: t('WorkScheduleItem.end'),
             dataName: 'end',
             sortName: 'end',
@@ -47,16 +51,27 @@ export class index {
                         name: TCommonBase("edit"),
                         icon: 'icon-edit',
                         href: "/WorkScheduleItem/edit/" + rows[0].id,
-                        action:"edit"
+                        action: "edit"
                     });
                 }
             }
             return ret;
         }
+        objectsList.dateRowCallback = (row) => {
+            console.log('sssss', row.start)
+            return new Date(row.start);
+        };
+        objectsList.calendarRowCallback = (row) => {
+            const element = document.createElement('div');
+            element.textContent = row.user_id;
+            return element;
+        }
+        objectsList.generateExports = UniversalExporter.generateObjectsListsExports(objectsList, '/WorkScheduleItem/export');
         container.append(objectsList);
         objectsList.refresh();
     }
 }
+
 export class edit {
     constructor(page, data) {
         let form = new FormManager(page.querySelector('form'));
@@ -69,10 +84,11 @@ export class edit {
         }
     }
 }
+
 export class add {
     constructor(page, data) {
         let form = new FormManager(page.querySelector('form'));
-        if(data && data.selects)
+        if (data && data.selects)
             form.loadSelects(data.selects);
 
         form.submit = async newData => {

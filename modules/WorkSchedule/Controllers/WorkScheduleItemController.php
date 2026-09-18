@@ -4,6 +4,8 @@ namespace WorkSchedule\Controllers;
 
 use Authorization\Permissions;
 use Core\Exceptions\NotFoundException;
+use WorkSchedule\WorkScheduleItem;
+
 class WorkScheduleItemController extends \Common\PageStandardController
 {
 
@@ -53,7 +55,7 @@ class WorkScheduleItemController extends \Common\PageStandardController
         $WorkScheduleItem = new \WorkSchedule\WorkScheduleItem();
         return ['selects' => $WorkScheduleItem->getSelects()];
     }
-    
+
         /**
      * @param int $id
      */
@@ -64,9 +66,18 @@ class WorkScheduleItemController extends \Common\PageStandardController
         $data = $WorkScheduleItem->getById($id);
         if ($data == null)
             throw new NotFoundException();
-            
+
         $this->addView('WorkSchedule', 'WorkScheduleItemShow', ['item' => $data]);
         $this->pushBreadcrumb(['title' => 'WorkScheduleItem', 'url' => '/WorkScheduleItem']);
         $this->pushBreadcrumb(['title' => 'Szczegóły', 'url' => '/WorkScheduleItem/show/'.$id]);
+    }
+
+    public function export()
+    {
+        ob_end_clean();
+        ['mime'=>$mime, 'data'=>$data]= (new WorkScheduleItem())->export($_POST['type'], json_decode($_POST['options']));
+        header('Content-type: ' . $mime);
+        echo $data;
+        exit;
     }
 }
