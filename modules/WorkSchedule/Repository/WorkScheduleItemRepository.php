@@ -22,7 +22,7 @@ class WorkScheduleItemRepository extends \Core\Repository
         $start = (int)$options->start;
         $limit = (int)$options->limit;
         $sqlOrder = $this->getOrderSQL($options);
-        $rows = DB::funquery("SELECT wsi.id, wsi.start, wsi.end, json_object('id',wsi.user_id, 'name',u.name, 'surname',u.surname) as user FROM work_schedule_item wsi JOIN user u ON u.id = wsi.user_id $sqlOrder LIMIT $start,$limit")->map(fn($row)=>(object)[...(array)$row, 'user'=>json_decode($row->user)]);
+        $rows = DB::funquery("SELECT wsi.id, wsi.start, wsi.end, json_object('id',wsi.user_id, 'name',u.name, 'surname',u.surname) as user FROM work_schedule_item wsi JOIN user u ON u.id = wsi.user_id $sqlOrder LIMIT $start,$limit")->map(fn($row)=>(object)[...(array)$row, 'user'=>json_decode($row->user)])->toArray();
         $total = DB::get("SELECT count(*) as count FROM work_schedule_item")[0]->count;
         return ['rows' => $rows, 'total' => $total];
     }
