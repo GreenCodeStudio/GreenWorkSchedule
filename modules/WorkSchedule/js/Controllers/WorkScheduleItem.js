@@ -7,6 +7,7 @@ import {t as TCommonBase} from "../../../CommonBase/i18n.xml";
 import {ObjectsList} from "../../../Core/js/ObjectsList/objectsList";
 import {Permissions} from "../../../Core/js/permissions";
 import {UniversalExporter} from "../../../CommonBase/js/UniversalExporter";
+import {create} from "fast-creator";
 
 export class index {
     constructor(page, data) {
@@ -62,8 +63,10 @@ export class index {
             return new Date(row.start);
         };
         objectsList.calendarRowCallback = (row) => {
-            const element = document.createElement('div');
-            element.textContent = row.user_id;
+            const element = create('div');
+            element.append(create('div', {text: row.start.substring(11)}));
+            element.append(create('div', {text: row.end.substring(11)}));
+            element.append(create('div', {text: row.user_id}));
             return element;
         }
         objectsList.generateExports = UniversalExporter.generateObjectsListsExports(objectsList, '/WorkScheduleItem/export');

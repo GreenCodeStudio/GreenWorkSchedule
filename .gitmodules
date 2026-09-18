@@ -19,3 +19,6 @@
 [submodule "modules/ExternalApplication"]
 	path = modules/ExternalApplication
 	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Externalapplication.git
+[submodule "modules/Core"]
+	path = modules/Core
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Core.git
