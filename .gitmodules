@@ -22,3 +22,6 @@
 [submodule "modules/Core"]
 	path = modules/Core
 	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Core.git
+[submodule "modules/Comment"]
+    path = modules/Comment
+    url = https://github.com/GreenCodeStudio/GreenCodeFramework-Comment.git
