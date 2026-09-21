@@ -1,0 +1,30 @@
+<form>
+    <div class="topBarButtons">
+        <a href="/Attendance/" class="button"><span class="icon-cancel"></span>{{t("CommonBase.cancel")}}</a>
+        <button class=("button action-":type)><span class="icon-save"></span>{{t("CommonBase.save")}}</button>
+    </div>
+    <div class="grid page-Attendance page-Attendance-edit">
+        <input name="id" type="hidden" />
+        <section class="card action-add" data-width="6">
+            <header>
+                <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+            </header>
+            <label>
+                <span>{{t("Attendance.Attendance.worker")}}</span>
+                <select name="worker_id" data-foreign-key="user" required > </select>
+            </label>
+            <label>
+                <span>{{t("Attendance.Attendance.date")}}</span>
+                <input type="date" step="any" name="date"  />
+            </label>
+            <label>
+                <span>{{t("Attendance.Attendance.start")}}</span>
+                <input type="time" step="any" name="start"  />
+            </label>
+            <label>
+                <span>{{t("Attendance.Attendance.end")}}</span>
+                <input type="time" step="any" name="end"  />
+            </label>
+        </section>
+    </div>
+</form>

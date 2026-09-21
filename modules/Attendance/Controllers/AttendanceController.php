@@ -3,7 +3,7 @@
 namespace Attendance\Controllers;
 
 use Attendance\Attendance;
-use Common\Authorization\Authorization;
+use Authorization\Authorization;
 use Core\Exceptions\NotFoundException;
 
 class AttendanceController extends \Common\PageStandardController
@@ -17,27 +17,6 @@ class AttendanceController extends \Common\PageStandardController
 
     }
 
-    /**
-     * @param int $id
-     * @OfflineDataOnly
-     */
-    function edit(int $id)
-    {
-        $this->will('Attendance', 'edit');
-        $this->addView('Attendance', 'AttendanceEdit', ['type' => 'edit']);
-        $this->pushBreadcrumb(['title' => 'Attendance', 'url' => '/Attendance']);
-        $this->pushBreadcrumb(['title' => 'Edycja', 'url' => '/Attendance/edit/'.$id]);
-    }
-
-    function edit_data(int $id)
-    {
-        $this->will('Attendance', 'edit');
-        $Attendance = new Attendance();
-        $data = $Attendance->getById($id);
-        if ($data == null)
-            throw new NotFoundException();
-        return ['Attendance' => $data,'selects'=>$Attendance->getSelects()];
-    }
 
     /**
      * @OfflineConstant
@@ -45,7 +24,7 @@ class AttendanceController extends \Common\PageStandardController
     function add()
     {
         $this->will('Attendance', 'add');
-        $this->addView('Attendance', 'AttendanceEdit', ['type' => 'add']);
+        $this->addView('Attendance', 'AttendanceAdd', ['type' => 'add']);
         $this->pushBreadcrumb(['title' => 'Attendance', 'url' => '/Attendance']);
         $this->pushBreadcrumb(['title' => 'Dodaj', 'url' => '/Attendance/add']);
     }

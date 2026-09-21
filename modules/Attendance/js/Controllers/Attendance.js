@@ -64,18 +64,6 @@ export class index {
     }
 }
 
-export class edit {
-    constructor(page, data) {
-        let form = new FormManager(page.querySelector('form'));
-        form.loadSelects(data.selects);
-        form.load(data.Attendance);
-
-        form.submit = async newData => {
-            await Ajax.Attendance.update(newData);
-            pageManager.goto('/Attendance');
-        }
-    }
-}
 
 export class add {
     constructor(page, data) {

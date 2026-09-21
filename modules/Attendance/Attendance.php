@@ -3,6 +3,7 @@
 namespace Attendance;
 
 use Attendance\Repository\AttendanceRepository;
+use User\Repository\UserRepository;
 
 class Attendance extends \Core\BussinesLogic
 {
@@ -16,34 +17,24 @@ class Attendance extends \Core\BussinesLogic
         return $this->defaultDB->getDataTable($options);
     }
 
-    public function update(int $id, $data)
+
+    public function insert($data, int $userId): int
     {
-        $filtered = $this->filterData($data);
-        $this->defaultDB->update($id, $filtered);
-        \Core\WebSocket\Sender::sendToUsers(["Attendance", "Attendance", "Update", $id]);
-    }
+        $start=new \DateTime($data->date.' '.$data->start);
+        $end=new \DateTime($data->date.' '.$data->end);
+        if($start>$end){
+            $end->add(new \DateInterval('P1D'));
+        }
 
-    protected function filterData($data)
-    {
-        $ret = [];
-        $ret['worker_id'] = $data->worker_id;
-        $ret['startUser_id'] = empty($data->startUser_id) ? null : $data->startUser_id;
-        $ret['endUser_id'] = empty($data->endUser_id) ? null : $data->endUser_id;
-        $ret['startAdded'] = empty($data->startAdded) ? null : $data->startAdded;
-        $ret['startWorker'] = empty($data->startWorker) ? null : $data->startWorker;
-        $ret['startSupervisor'] = empty($data->startSupervisor) ? null : $data->startSupervisor;
-        $ret['endAdded'] = empty($data->endAdded) ? null : $data->endAdded;
-        $ret['endWorker'] = empty($data->endWorker) ? null : $data->endWorker;
-        $ret['endSupervisor'] = empty($data->endSupervisor) ? null : $data->endSupervisor;
-
-        return $ret;
-    }
-
-    public function insert($data): int
-    {
-        $filtered = $this->filterData($data);
-
-        $id = $this->defaultDB->insert($filtered);
+        $id = $this->defaultDB->insert([
+            'worker_id' => $data->worker_id,
+            'startUser_id' => $userId,
+            'startAdded' => date('Y-m-d H:i:s'),
+            'startWorker'=>$start->format('Y-m-d H:i:s'),
+            'endUser_id' => $userId,
+            'endAdded' => date('Y-m-d H:i:s'),
+            'endWorker'=>$end->format('Y-m-d H:i:s'),
+        ]);
         \Core\WebSocket\Sender::sendToUsers(["Attendance", "Attendance", "Insert", $id]);
         return $id;
     }
@@ -56,11 +47,7 @@ class Attendance extends \Core\BussinesLogic
     public function getSelects()
     {
         $ret = [];
-        $user = new Repository\userRepository();
-        $ret["user"] = $user->getSelect();
-        $user = new Repository\userRepository();
-        $ret["user"] = $user->getSelect();
-        $user = new Repository\userRepository();
+        $user = new UserRepository();
         $ret["user"] = $user->getSelect();
         return $ret;
     }

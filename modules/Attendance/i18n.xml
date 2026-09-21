@@ -16,6 +16,9 @@
         <node name="end">
             <value lang="en">End</value>
         </node>
+        <node name="date">
+            <value lang="en">Date</value>
+        </node>
         <node name="startAdded">
             <value lang="en">startAdded</value>
         </node>
