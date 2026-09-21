@@ -6,7 +6,6 @@ use CommonBase\UniversalExporter\UeItem;
 use CommonBase\UniversalExporter\UniversalExporter;
 use User\Repository\UserRepository;
 use WorkSchedule\Repository\WorkScheduleItemRepository;
-use WorkSchedule\Repository\WorkScheduleRepository;
 
 class WorkScheduleItem extends \Core\BussinesLogic
 {
@@ -62,8 +61,6 @@ class WorkScheduleItem extends \Core\BussinesLogic
         $ret = [];
         $user = new UserRepository();
         $ret["user"] = $user->getSelect();
-        $work_schedule = new WorkScheduleRepository();
-        $ret["work_schedule"] = $work_schedule->getSelect();
         return $ret;
     }
 

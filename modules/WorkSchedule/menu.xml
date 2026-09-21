@@ -2,6 +2,13 @@
 <menu>
     <element>
         <link>/WorkScheduleItem</link>
-        <title>WorkScheduleItem</title>
+        <title key="WorkSchedule.WorkScheduleList.menu">WorkScheduleItem</title>
+        <menu>
+            <element>
+                <link>/WorkScheduleItem</link>
+                <title key="WorkSchedule.mySchedule.menu">WorkScheduleItem</title>
+            </element>
+        </menu>
+
     </element>
 </menu>

@@ -50,6 +50,15 @@ export class index {
                         action: "edit"
                     });
                 }
+                if (Permissions.can('WorkScheduleItem', 'show')) {
+                    ret.push({
+                        name: TCommonBase("show"),
+                        icon: 'icon-show',
+                        href: "/WorkScheduleItem/show/" + rows[0].id,
+                        action: "show",
+                        main:true
+                    });
+                }
             }
             return ret;
         }

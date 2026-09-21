@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
+    <node name="mySchedule">
+        <node name="menu">
+            <value lang="en">My schedule</value>
+            <value lang="pl">Mój harmonogram</value>
+            <value lang="de">Mein Zeitplan</value>
+        </node>
+    </node>
     <node name="WorkScheduleList">
+        <node name="menu">
+            <value lang="en">Work schedule</value>
+            <value lang="pl">Harmonogram</value>
+            <value lang="de">Arbeitsplan</value>
+        </node>
         <node name="header">
             <value lang="en">List of elements of type WorkSchedule</value>
         </node>
     </node>
     <node name="WorkScheduleItem">
         <node name="WorkScheduleItem">
-            <value lang="en">WorkScheduleItem</value>
+            <value lang="en">Work schedule item</value>
+            <value lang="pl">Element harmonogramu</value>
+            <value lang="de">Arbeitsplan-Element</value>
         </node>
         <node name="id">
             <value lang="en">id</value>
