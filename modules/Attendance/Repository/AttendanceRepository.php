@@ -70,4 +70,9 @@ FROM attendance a
         }
         return $item;
     }
+
+    public function getForUserSummary($startRange, $endRange, $workerId)
+    {
+        return DB::get("SELECT * FROM attendance WHERE worker_id = ? AND date(nullif(startWorker, startAdded)) BETWEEN ? AND ?", [$workerId, $startRange, $endRange]);
+    }
 }

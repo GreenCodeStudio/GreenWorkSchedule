@@ -4,6 +4,7 @@ namespace Attendance;
 
 use Attendance\Repository\AttendanceRepository;
 use User\Repository\UserRepository;
+use WorkSchedule\Repository\WorkScheduleItemRepository;
 
 class Attendance extends \Core\BussinesLogic
 {
@@ -86,5 +87,15 @@ class Attendance extends \Core\BussinesLogic
     public function getToShow(int $id)
     {
         return $this->defaultDB->getToShow($id);
+    }
+
+    public function userSummary($startRange, $endRange, $workerId)
+    {
+        $attendance =(new AttendanceRepository())->getForUserSummary($startRange, $endRange, $workerId);
+        $scheduleItems=(new WorkScheduleItemRepository())->getForUserSummary($startRange, $endRange, $workerId);
+        return [
+            'attendance'=>$attendance,
+            'scheduleItems'=>$scheduleItems
+        ];
     }
 }

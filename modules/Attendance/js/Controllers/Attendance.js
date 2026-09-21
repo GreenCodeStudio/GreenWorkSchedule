@@ -6,6 +6,7 @@ import {t} from "../../i18n.xml";
 import {t as TCommonBase} from "../../../CommonBase/i18n.xml";
 import {ObjectsList} from "../../../Core/js/ObjectsList/objectsList";
 import {Permissions} from "../../../Core/js/permissions";
+import {create} from "fast-creator";
 
 export class index {
     constructor(page, data) {
@@ -20,7 +21,7 @@ export class index {
             sortName: 'worker',
             width: 100,
             widthGrow: 1,
-            content: (row) => row.worker?(row.worker.name+' '+row.worker.surname):''
+            content: (row) => row.worker ? (row.worker.name + ' ' + row.worker.surname) : ''
         });
         objectsList.columns.push({
             name: t('Attendance.start'),
@@ -86,5 +87,34 @@ export class me {
         page.querySelector('.endWorkBtn').addEventListener('click', async () => {
             await Ajax.Attendance.endWork();
         })
+    }
+}
+
+export class userSummary {
+
+    constructor(page, data) {
+        this.page = page;
+        page.querySelector('select[name="worker_id"]').append(...data.selects.user.map(x => create('option', {
+            value: x.id,
+            text: x.title
+        })));
+        this.load();
+        this.page.querySelector('[name="startRange"],[name="endRange"],[name="worker_id"]').addEventListener('change', () => this.load());
+    }
+
+    async load() {
+        const startRange = this.page.querySelector('[name="startRange"]')
+        const endRange = this.page.querySelector('[name="endRange"]')
+        const workerSelect = this.page.querySelector('[name="worker_id"]')
+        if (!startRange.value || !endRange.value) {
+            const month = new Date();
+            month.setDate(1)
+            startRange.value = month.toISOString().split('T')[0];
+            month.setMonth(month.getMonth() + 1);
+            month.setDate(month.getDate() - 1);
+            endRange.value = month.toISOString().split('T')[0];
+        }
+
+        await Ajax.Attendance.userSummary(startRange.value, endRange.value, workerSelect.value);
     }
 }

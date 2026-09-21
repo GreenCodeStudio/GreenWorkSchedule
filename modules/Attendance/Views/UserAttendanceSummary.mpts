@@ -1,0 +1,6 @@
+<section class="card action-show" data-width="6">
+    <input type="date" name="startRange"> </input>
+    <input type="date" name="endRange"> </input>
+        <select name="worker_id" data-foreign-key="user" required > </select>
+
+</section>

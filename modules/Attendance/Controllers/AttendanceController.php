@@ -56,4 +56,15 @@ class AttendanceController extends \Common\PageStandardController
         dump($currentAttendance);
         $this->addView('Attendance', 'AttendanceMe', ['currentAttendance' => $currentAttendance]);
     }
+    function userSummary()
+    {
+        $this->will('Attendance', 'show');
+        $this->addView('Attendance', 'UserAttendanceSummary');
+    }
+    function userSummary_data()
+    {
+        $this->will('Attendance', 'show');
+        $Attendance = new Attendance();
+        return ['selects' => $Attendance->getSelects()];
+    }
 }

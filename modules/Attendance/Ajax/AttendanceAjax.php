@@ -27,4 +27,8 @@ class AttendanceAjax extends \Core\AjaxController
     {
         (new Attendance())->endWork(Authorization::getUserId());
     }
+    public function userSummary($startRange, $endRange, $workerId)
+    {
+        return  (new Attendance())->userSummary($startRange, $endRange, $workerId);
+    }
 }
