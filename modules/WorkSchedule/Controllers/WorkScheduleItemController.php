@@ -2,7 +2,6 @@
 
 namespace WorkSchedule\Controllers;
 
-use Authorization\Permissions;
 use Core\Exceptions\NotFoundException;
 use WorkSchedule\WorkScheduleItem;
 

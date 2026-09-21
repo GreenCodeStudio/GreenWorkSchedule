@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <node name="Attendance">
+        <node name="Attendance">
+            <value lang="en">Attendance</value>
+        </node>
+        <node name="id">
+            <value lang="en">id</value>
+        </node>
+        <node name="worker">
+            <value lang="en">Worker</value>
+        </node>
+        <node name="start">
+            <value lang="en">Start</value>
+        </node>
+        <node name="end">
+            <value lang="en">End</value>
+        </node>
+        <node name="startAdded">
+            <value lang="en">startAdded</value>
+        </node>
+        <node name="startWorker">
+            <value lang="en">startWorker</value>
+        </node>
+        <node name="startSupervisor">
+            <value lang="en">startSupervisor</value>
+        </node>
+        <node name="endAdded">
+            <value lang="en">endAdded</value>
+        </node>
+        <node name="endWorker">
+            <value lang="en">endWorker</value>
+        </node>
+        <node name="endSupervisor">
+            <value lang="en">endSupervisor</value>
+        </node>
+    </node>
+    <node name="AttendanceList">
+        <node name="header">
+            <value lang="pl">Obecności</value>
+            <value lang="en">Attendance</value>
+        </node>
+    </node>
+</root>

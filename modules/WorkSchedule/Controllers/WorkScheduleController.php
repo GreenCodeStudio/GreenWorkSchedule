@@ -2,8 +2,8 @@
 
 namespace WorkSchedule\Controllers;
 
-use Authorization\Permissions;
 use Core\Exceptions\NotFoundException;
+
 class WorkScheduleController extends \Common\PageStandardController
 {
 
@@ -47,8 +47,8 @@ class WorkScheduleController extends \Common\PageStandardController
         $this->pushBreadcrumb(['title' => 'WorkSchedule', 'url' => '/WorkSchedule']);
         $this->pushBreadcrumb(['title' => 'Dodaj', 'url' => '/WorkSchedule/add']);
     }
-    
-    
+
+
         /**
      * @param int $id
      */
@@ -59,7 +59,7 @@ class WorkScheduleController extends \Common\PageStandardController
         $data = $WorkSchedule->getById($id);
         if ($data == null)
             throw new NotFoundException();
-            
+
         $this->addView('WorkSchedule', 'WorkScheduleShow', ['item' => $data]);
         $this->pushBreadcrumb(['title' => 'WorkSchedule', 'url' => '/WorkSchedule']);
         $this->pushBreadcrumb(['title' => 'Szczegóły', 'url' => '/WorkSchedule/show/'.$id]);

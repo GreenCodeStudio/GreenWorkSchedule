@@ -1,0 +1,7 @@
+<button class="startWorkBtn">Start Work</button>
+<button class="endWorkBtn">End Work</button>
+<:if condition=currentAttendance >
+<div>
+{{dump(currentAttendance)}}
+</div>
+</:if>
