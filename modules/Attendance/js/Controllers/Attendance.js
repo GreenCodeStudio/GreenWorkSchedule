@@ -7,6 +7,7 @@ import {t as TCommonBase} from "../../../CommonBase/i18n.xml";
 import {ObjectsList} from "../../../Core/js/ObjectsList/objectsList";
 import {Permissions} from "../../../Core/js/permissions";
 import {create} from "fast-creator";
+import UserAttendanceSummaryItem from "../../Views/UserAttendanceSummaryItem.mpts"
 
 export class index {
     constructor(page, data) {
@@ -99,7 +100,9 @@ export class userSummary {
             text: x.title
         })));
         this.load();
-        this.page.querySelector('[name="startRange"],[name="endRange"],[name="worker_id"]').addEventListener('change', () => this.load());
+        for (const x of this.page.querySelectorAll('[name="startRange"],[name="endRange"],[name="worker_id"]')) {
+            x.addEventListener('change', () => this.load());
+        }
     }
 
     async load() {
@@ -114,7 +117,26 @@ export class userSummary {
             month.setDate(month.getDate() - 1);
             endRange.value = month.toISOString().split('T')[0];
         }
+        const start = startRange.value;
+        const end = endRange.value;
+        const worker = workerSelect.value;
+        const result = await Ajax.Attendance.userSummary(startRange.value, endRange.value, workerSelect.value);
+        if (start == startRange.value && end == endRange.value && worker == workerSelect.value) {
+            const tbody = this.page.querySelector('table.report tbody');
+            while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+            for (const row of result) {
+                const dates=[row.scheduleItem?.start,row.scheduleItem?.end, row.attendance?.startWorker??row.attendance?.startAdded, row.attendance?.endWorker??row.attendance?.endAdded].filter(x=>x).sort();
+                const diff = (new Date(dates[dates.length-1]).getTime() - new Date(dates[0]).getTime());
+                row.isMultiDay = diff > 24*60*60*1000;
+                if(row.isMultiDay) {
+                    row.date = dates[0].substring(0,10);
+                }else{
+                    row.date =[...new Set(dates.map(x=>x.substring(0,10)))].join(' / ');
+                }
+                console.log(row);
 
-        await Ajax.Attendance.userSummary(startRange.value, endRange.value, workerSelect.value);
+                tbody.appendChild(UserAttendanceSummaryItem(row));
+            }
+        }
     }
 }

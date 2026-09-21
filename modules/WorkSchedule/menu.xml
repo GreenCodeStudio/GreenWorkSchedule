@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<menu><group/><element><link>/WorkSchedule</link><title>WorkSchedule</title></element><group/><element><link>/WorkScheduleItem</link><title>WorkScheduleItem</title></element></menu>
+<menu>
+    <element>
+        <link>/WorkScheduleItem</link>
+        <title>WorkScheduleItem</title>
+    </element>
+</menu>

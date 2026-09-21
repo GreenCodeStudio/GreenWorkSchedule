@@ -91,11 +91,43 @@ class Attendance extends \Core\BussinesLogic
 
     public function userSummary($startRange, $endRange, $workerId)
     {
-        $attendance =(new AttendanceRepository())->getForUserSummary($startRange, $endRange, $workerId);
+        $attendances =(new AttendanceRepository())->getForUserSummary($startRange, $endRange, $workerId);
         $scheduleItems=(new WorkScheduleItemRepository())->getForUserSummary($startRange, $endRange, $workerId);
-        return [
-            'attendance'=>$attendance,
-            'scheduleItems'=>$scheduleItems
-        ];
+        $ret=[];
+        $ai=0;
+        $si=0;
+        while($ai<count($attendances) || $si<count($scheduleItems)) {
+            $attendance = $attendances[$ai] ?? null;
+            $scheduleItem = $scheduleItems[$si] ?? null;
+            if(!$attendance){
+                $ret[]=['scheduleItem'=>$scheduleItem];
+                $si++;
+            }else if(!$scheduleItem){
+                $ret[]=['attendance'=>$attendance];
+                $ai++;
+            }else{
+                $attendanceStart = new \DateTime($attendance->startWorker ?? $attendance->startAdded);
+                if($attendance->endWorker ?? $attendance->endAdded) {
+                    $attendanceEnd = new \DateTime($attendance->endWorker ?? $attendance->endAdded);
+                }
+                else {
+                    $attendanceEnd = clone $attendanceStart;//not ended, use default of 12h
+                    $attendanceEnd->add(new \DateInterval('P12H'));
+                }
+                $isIntersecting = $attendanceStart <= new \DateTime($scheduleItem->end) && $attendanceEnd >= new \DateTime($scheduleItem->start);
+                if($isIntersecting){
+                    $ret[]=['attendance'=>$attendance, 'scheduleItem'=>$scheduleItem];
+                    $ai++;
+                    $si++;
+                }else if($attendanceStart < new \DateTime($scheduleItem->start)){
+                    $ret[]=['attendance'=>$attendance];
+                    $ai++;
+                }else {
+                    $ret[] = ['scheduleItem' => $scheduleItem];
+                    $si++;
+                }
+            }
+        }
+        return $ret;
     }
 }

@@ -46,6 +46,6 @@ class WorkScheduleItemRepository extends \Core\Repository
 
     public function getForUserSummary($startRange, $endRange, $workerId)
     {
-        return DB::get("SELECT * FROM work_schedule_item WHERE user_id = ? AND date(start) BETWEEN ? AND ?", [$workerId, $startRange, $endRange]);
+        return DB::get("SELECT * FROM work_schedule_item WHERE user_id = ? AND date(start) BETWEEN ? AND ? ORDER BY start", [$workerId, $startRange, $endRange]);
     }
 }

@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <root>
     <table>
-        <name>work_schedule</name>
-        <column>
-            <name>id</name>
-            <type>int(11)</type>
-            <autoincrement>YES</autoincrement>
-        </column>
-        <column>
-            <name>name</name>
-            <type>text</type>
-        </column>
-        <index>
-            <type>PRIMARY</type>
-            <element>id</element>
-        </index>
-    </table>
-    <table>
         <name>work_schedule_item</name>
         <column>
             <name>id</name>
@@ -26,11 +10,6 @@
         <column>
             <name>user_id</name>
             <type>int(11)</type>
-        </column>
-        <column>
-            <name>work_schedule_id</name>
-            <type>int(11)</type>
-            <null>YES</null>
         </column>
         <column>
             <name>start</name>
@@ -56,13 +35,6 @@
             <type>FOREIGN</type>
             <element>user_id</element>
             <reference name="user">
-                <element>id</element>
-            </reference>
-        </index>
-        <index>
-            <type>FOREIGN</type>
-            <element>work_schedule_id</element>
-            <reference name="work_schedule">
                 <element>id</element>
             </reference>
         </index>

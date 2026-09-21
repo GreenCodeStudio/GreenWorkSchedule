@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <node name="WorkSchedule">
-        <node name="WorkSchedule">
-            <value lang="en">WorkSchedule</value>
-        </node>
-        <node name="id">
-            <value lang="en">id</value>
-        </node>
-        <node name="name">
-            <value lang="en">name</value>
-        </node>
-    </node>
     <node name="WorkScheduleList">
         <node name="header">
             <value lang="en">List of elements of type WorkSchedule</value>

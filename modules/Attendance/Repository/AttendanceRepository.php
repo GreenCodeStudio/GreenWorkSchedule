@@ -73,6 +73,6 @@ FROM attendance a
 
     public function getForUserSummary($startRange, $endRange, $workerId)
     {
-        return DB::get("SELECT * FROM attendance WHERE worker_id = ? AND date(nullif(startWorker, startAdded)) BETWEEN ? AND ?", [$workerId, $startRange, $endRange]);
+        return DB::get("SELECT * FROM attendance WHERE worker_id = ? AND date(nullif(startWorker, startAdded)) BETWEEN ? AND ? ORDER BY nullif(startWorker, startAdded)", [$workerId, $startRange, $endRange]);
     }
 }
