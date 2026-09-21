@@ -48,7 +48,11 @@ class AttendanceRepository extends \Core\Repository
 
     public function getCurrentByUserId($getUserId)
     {
-        return DB::get("SELECT * FROM (SELECT * FROM attendance WHERE worker_id = ? AND worker_id = startUser_id ORDER BY startAdded DESC LIMIT 1) sub WHERE endAdded is null", [$getUserId])[0]??null;
+        $id= DB::get("SELECT id FROM (SELECT id, endAdded FROM attendance WHERE worker_id = ? AND worker_id = startUser_id ORDER BY startAdded DESC LIMIT 1) sub WHERE endAdded is null", [$getUserId])[0]?->id??null;
+        if($id){
+            return $this->getToShow($id);
+        }
+        return null;
     }
 
     public function getToShow(int $id)

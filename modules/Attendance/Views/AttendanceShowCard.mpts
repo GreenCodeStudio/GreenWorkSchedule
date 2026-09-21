@@ -1,0 +1,46 @@
+    <section class="card action-show" data-width="6">
+        <header>
+            <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+        </header>
+        <div class="pseudoLabel">
+            <span>Pracownik:</span>
+            <strong>{{worker.name}} {{worker.surname}}</strong>
+        </div>
+        <:if condition=(startWorker??startAdded??0) >
+            <div class="pseudoLabel">
+                <span>Rozpoczęcie:</span>
+                <strong>{{startWorker??startAdded}}</strong>
+            </div>
+            <:if condition=((startWorker??startAdded)!=startAdded)>
+                <div class="pseudoLabel">
+                    <span>Rozpoczęcie dodano:</span>
+                    <strong>{{startAdded}}</strong>
+                </div>
+            </:if>
+            <:if condition=(startUser?.id!==worker.id)>
+                <div class="pseudoLabel">
+                    <span>Rozpoczęcie przez:</span>
+                    <strong>{{startUser?.name}} {{startUser?.surname}}</strong>
+                </div>
+            </:if>
+        </:if>
+
+        <:if condition=(endWorker??endAdded??0) >
+            <div class="pseudoLabel">
+                <span>Zakończenie:</span>
+                <strong>{{endWorker??endAdded}}</strong>
+            </div>
+            <:if condition=((endWorker??endAdded)!=endAdded)>
+                <div class="pseudoLabel">
+                    <span>Zakończenie dodano:</span>
+                    <strong>{{endAdded}}</strong>
+                </div>
+            </:if>
+            <:if condition=(endUser?.id!==worker.id)>
+                <div class="pseudoLabel">
+                    <span>Zakończenie przez:</span>
+                    <strong>{{endUser?.name}} {{endUser?.surname}}</strong>
+                </div>
+            </:if>
+        </:if>
+    </section>

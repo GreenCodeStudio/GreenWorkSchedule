@@ -2,6 +2,6 @@
 <button class="endWorkBtn">End Work</button>
 <:if condition=currentAttendance >
 <div>
-{{dump(currentAttendance)}}
+    <<getView('Attendance', 'AttendanceShowCard', currentAttendance)>>
 </div>
 </:if>

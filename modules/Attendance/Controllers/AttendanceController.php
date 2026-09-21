@@ -53,7 +53,6 @@ class AttendanceController extends \Common\PageStandardController
     function me()
     {
         $currentAttendance = new Attendance()->getCurrentByUserId(Authorization::getUserId());
-        dump($currentAttendance);
         $this->addView('Attendance', 'AttendanceMe', ['currentAttendance' => $currentAttendance]);
     }
     function userSummary()

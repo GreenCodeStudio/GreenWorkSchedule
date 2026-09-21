@@ -3,50 +3,5 @@
     </a>
 </div>
 <div class="grid page-Attendance page-Attendance-show">
-    <section class="card action-show" data-width="6">
-        <header>
-            <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
-        </header>
-        <div class="pseudoLabel">
-            <span>Pracownik:</span>
-            <strong>{{item.worker.name}} {{item.worker.surname}}</strong>
-        </div>
-        <:if condition=(item.startWorker??item.startAdded??0) >
-            <div class="pseudoLabel">
-                <span>Rozpoczęcie:</span>
-                <strong>{{item.startWorker??item.startAdded}}</strong>
-            </div>
-            <:if condition=((item.startWorker??item.startAdded)!=item.startAdded)>
-                <div class="pseudoLabel">
-                    <span>Rozpoczęcie dodano:</span>
-                    <strong>{{item.startAdded}}</strong>
-                </div>
-            </:if>
-            <:if condition=(item.startUser?.id!==item.worker.id)>
-                <div class="pseudoLabel">
-                    <span>Rozpoczęcie przez:</span>
-                    <strong>{{item.startUser?.name}} {{item.startUser?.surname}}</strong>
-                </div>
-            </:if>
-        </:if>
-
-        <:if condition=(item.endWorker??item.endAdded??0) >
-            <div class="pseudoLabel">
-                <span>Zakończenie:</span>
-                <strong>{{item.endWorker??item.endAdded}}</strong>
-            </div>
-            <:if condition=((item.endWorker??item.endAdded)!=item.endAdded)>
-                <div class="pseudoLabel">
-                    <span>Zakończenie dodano:</span>
-                    <strong>{{item.endAdded}}</strong>
-                </div>
-            </:if>
-            <:if condition=(item.endUser?.id!==item.worker.id)>
-                <div class="pseudoLabel">
-                    <span>Zakończenie przez:</span>
-                    <strong>{{item.endUser?.name}} {{item.endUser?.surname}}</strong>
-                </div>
-            </:if>
-        </:if>
-    </section>
+    <<getView('Attendance', 'AttendanceShowCard', item)>>
 </div>
