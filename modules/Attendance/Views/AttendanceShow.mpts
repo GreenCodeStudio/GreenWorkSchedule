@@ -8,6 +8,6 @@
     <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
 </header>
     <<getView('Attendance', 'AttendanceShowCard', item)>>
-
+    <<getView('Comment', 'Comments', comments)>>
 </section>
 </div>

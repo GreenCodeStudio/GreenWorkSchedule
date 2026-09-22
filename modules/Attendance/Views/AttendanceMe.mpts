@@ -5,6 +5,7 @@
         <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
     </header>
         <div class="buttonsWrapper">
+            <button class="startWorkBtn">Cancel and start new work</button>
             <button class="endWorkBtn">End Work</button>
         </div>
 

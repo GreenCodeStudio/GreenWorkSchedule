@@ -4,6 +4,7 @@ namespace Attendance\Controllers;
 
 use Attendance\Attendance;
 use Authorization\Authorization;
+use Comment\Comment;
 use Core\Exceptions\NotFoundException;
 
 class AttendanceController extends \Common\PageStandardController
@@ -45,7 +46,8 @@ class AttendanceController extends \Common\PageStandardController
         $data = $Attendance->getToShow($id);
         if ($data == null)
             throw new NotFoundException();
-        $this->addView('Attendance', 'AttendanceShow', ['item' => $data]);
+        $comments=(new Comment())->getToShow('Attendance', $id);
+        $this->addView('Attendance', 'AttendanceShow', ['item' => $data, 'comments' => ['items'=>$comments]]);
         $this->pushBreadcrumb(['title' => 'Attendance', 'url' => '/Attendance']);
         $this->pushBreadcrumb(['title' => 'Szczegóły', 'url' => '/Attendance/show/'.$id]);
     }
