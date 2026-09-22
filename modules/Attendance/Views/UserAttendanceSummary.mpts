@@ -2,9 +2,19 @@
     <input type="date" name="startRange"> </input>
     <input type="date" name="endRange"> </input>
     <select name="worker_id" data-foreign-key="user" required > </select>
-    <table class="report">
+    <table class="attendanceUserSummary report">
         <thead>
-
+        <tr>
+            <td rowspan="2">{{t('Attendance.userSummary.date')}}</td>
+            <td>{{t('Attendance.userSummary.scheduleStart')}}</td>
+            <td>{{t('Attendance.userSummary.actualStart')}}</td>
+            <td rowspan="2">{{t('Attendance.userSummary.scheduleHours')}}</td>
+            <td rowspan="2">{{t('Attendance.userSummary.actualHours')}}</td>
+        </tr>
+        <tr>
+            <td>{{t('Attendance.userSummary.scheduleEnd')}}</td>
+            <td>{{t('Attendance.userSummary.actualEnd')}}</td>
+        </tr>
         </thead>
         <tbody>
 

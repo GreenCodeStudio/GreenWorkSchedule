@@ -167,9 +167,9 @@
     "@xmldom/xmldom" "^0.8.11"
 
 "@green-code-studio/objects-list@^1.10.1":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.12.0.tgz#39738deb317f53eca4078e85090a81c4382de565"
-  integrity sha512-PdfM9xOreAcjq0PKJz073WEzHQ+C1bK8EGP+mMDm5MlUVg4UOLXqjMGA0az9y2QeQiPj3Xa7nWt1MfsXsH/wbA==
+  version "1.12.3"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.12.3.tgz#70999fe5e47b235f9d634c4df819021e13fa562f"
+  integrity sha512-UOy9mhCNCpY4FAtxNrImpElpzzWAuuxCRt9aXeJ/wQlWmFJaCR9Dk3rbVvYIaHqfRCwm6InGs02RC30ktr+V0Q==
   dependencies:
     "@green-code-studio/context-menu" "^1.0.2"
     "@green-code-studio/internationalization" "^1.0.4"
@@ -1480,9 +1480,9 @@ dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.427:
-  version "1.5.433"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.433.tgz#5c26b05c48030ff4a5566fcaa10dc452a1d1de3e"
-  integrity sha512-5lCAbyZBjtmUt/RAGHRqrL2q0oEFRThDAsZHHDn9XHa89Qw7gMYOeSicBTy+AHfvo0r6vwsZvqNJTQIQy1BLzA==
+  version "1.5.434"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.434.tgz#265b62e4a177891cc74690511ca911130410aeb0"
+  integrity sha512-7EeFW9OLf1NN9NKQP9xdOE/XKqjxv7JDPP6AEAkHli11+Fae1OaLoNuAf13hQv1PPNtuES0pLQSPk2+fS3s8ww==
 
 emitter-component@^1.1.1:
   version "1.1.2"

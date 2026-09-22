@@ -65,5 +65,40 @@
         <value lang="en">User summary</value>
         <value lang="pl">Podsumowanie użytkownika</value>
         <value lang="de">Benutzerzusammenfassung</value>
+        <node name="date">
+            <value lang="en">Date</value>
+            <value lang="pl">Data</value>
+            <value lang="de">Datum</value>
+        </node>
+        <node name="scheduleStart">
+            <value lang="en">Schedule start</value>
+            <value lang="pl">Planowany początek</value>
+            <value lang="de">Geplanter Start</value>
+        </node>
+        <node name="scheduleEnd">
+            <value lang="en">Schedule end</value>
+            <value lang="pl">Planowany koniec</value>
+            <value lang="de">Geplantes Ende</value>
+        </node>
+        <node name="actualStart">
+            <value lang="en">Actual start</value>
+            <value lang="pl">Rzeczywisty początek</value>
+            <value lang="de">Tatsächlicher Start</value>
+        </node>
+        <node name="actualEnd">
+            <value lang="en">Actual end</value>
+            <value lang="pl">Rzeczywisty koniec</value>
+            <value lang="de">Tatsächliches Ende</value>
+        </node>
+        <node name="scheduleHours">
+            <value lang="en">Schedule hours</value>
+            <value lang="pl">Planowane godziny</value>
+            <value lang="de">Geplante Stunden</value>
+        </node>
+        <node name="actualHours">
+            <value lang="en">Actual hours</value>
+            <value lang="pl">Rzeczywiste godziny</value>
+            <value lang="de">Tatsächliche Stunden</value>
+        </node>
     </node>
 </root>

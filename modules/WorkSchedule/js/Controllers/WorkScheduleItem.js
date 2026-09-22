@@ -68,7 +68,7 @@ export class index {
         };
         objectsList.calendarRowCallback = (row) => {
             const element = create('div');
-            element.append(create('div', {text: row.start.substring(11) + '-' + row.end.substring(11)}));
+            element.append(create('div', {text: row.start.substring(11,16) + '-' + row.end.substring(11,16)}));
             element.append(create('div', {text: row.user.name + ' ' + row.user.surname}));
             return element;
         }
@@ -95,7 +95,7 @@ export class edit {
 
         form.submit = async newData => {
             await Ajax.WorkScheduleItem.update(newData);
-            pageManager.goto('/WorkScheduleItem');
+            pageManager.goto('/WorkScheduleItem?date=' + newData.date);
         }
     }
 }
@@ -109,7 +109,7 @@ export class add {
 
         form.submit = async newData => {
             await Ajax.WorkScheduleItem.insert(newData);
-            pageManager.goto('/WorkScheduleItem');
+            pageManager.goto('/WorkScheduleItem?date=' + newData.date);
         }
     }
 }
