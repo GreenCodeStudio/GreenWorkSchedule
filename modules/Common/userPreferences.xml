@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <preference>
+        <name>color</name>
+        <title>Common.user.color</title>
+        <default>#888888</default>
+        <type>color</type>
+    </preference>
+</root>

@@ -66,9 +66,12 @@ export class index {
             console.log('sssss', row.start)
             return new Date(row.start);
         };
+        objectsList.colorRowCallback = (row) => {
+            return row.user?.color ?? '#888';
+        }
         objectsList.calendarRowCallback = (row) => {
             const element = create('div');
-            element.append(create('div', {text: row.start.substring(11,16) + '-' + row.end.substring(11,16)}));
+            element.append(create('div', {text: row.start.substring(11, 16) + '-' + row.end.substring(11, 16)}));
             element.append(create('div', {text: row.user.name + ' ' + row.user.surname}));
             return element;
         }

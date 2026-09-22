@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <node name="user">
+        <node name="color">
+            <value lang="en">Color</value>
+            <value lang="pl">Kolor</value>
+            <value lang="de">Farbe</value>
+        </node>
+    </node>
+</root>
