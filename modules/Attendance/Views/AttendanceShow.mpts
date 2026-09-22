@@ -3,5 +3,11 @@
     </a>
 </div>
 <div class="grid page-Attendance page-Attendance-show">
+<section class="card action-show" data-width="6">
+<header>
+    <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+</header>
     <<getView('Attendance', 'AttendanceShowCard', item)>>
+
+</section>
 </div>

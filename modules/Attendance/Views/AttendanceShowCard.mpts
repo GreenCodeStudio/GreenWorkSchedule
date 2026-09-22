@@ -1,7 +1,4 @@
-    <section class="card action-show" data-width="6">
-        <header>
-            <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
-        </header>
+
         <div class="pseudoLabel">
             <span>Pracownik:</span>
             <strong>{{worker.name}} {{worker.surname}}</strong>
@@ -43,4 +40,3 @@
                 </div>
             </:if>
         </:if>
-    </section>

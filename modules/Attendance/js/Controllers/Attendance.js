@@ -82,11 +82,13 @@ export class add {
 
 export class me {
     constructor(page, data) {
-        page.querySelector('.startWorkBtn').addEventListener('click', async () => {
+        page.querySelector('.startWorkBtn')?.addEventListener('click', async () => {
             await Ajax.Attendance.startWork();
+            pageManager.goto(document.location.href, {ignoreHistory: true});
         })
-        page.querySelector('.endWorkBtn').addEventListener('click', async () => {
+        page.querySelector('.endWorkBtn')?.addEventListener('click', async () => {
             await Ajax.Attendance.endWork();
+            pageManager.goto(document.location.href, {ignoreHistory: true});
         })
     }
 }

@@ -1,7 +1,27 @@
-<button class="startWorkBtn">Start Work</button>
-<button class="endWorkBtn">End Work</button>
 <:if condition=currentAttendance >
 <div>
+    <section class="card action-show attendanceMe" data-width="6">
+    <header>
+        <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+    </header>
+        <div class="buttonsWrapper">
+            <button class="endWorkBtn">End Work</button>
+        </div>
     <<getView('Attendance', 'AttendanceShowCard', currentAttendance)>>
+
+    </section>
 </div>
 </:if>
+<:else>
+<div>
+    <section class="card action-show attendanceMe" data-width="6">
+        <header>
+            <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+        </header>
+        <div class="buttonsWrapper">
+            <button class="startWorkBtn">Start Work</button>
+            <button class="endWorkBtn">End Work without starting</button>
+        </div>
+    </section>
+</div>
+</:else>
