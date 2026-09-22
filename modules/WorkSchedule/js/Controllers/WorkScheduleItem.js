@@ -22,7 +22,7 @@ export class index {
             sortName: 'user',
             width: 100,
             widthGrow: 1,
-            content:row=>row.user.name+' '+row.user.surname
+            content: row => row.user.name + ' ' + row.user.surname
 
         });
         objectsList.columns.push({
@@ -56,7 +56,7 @@ export class index {
                         icon: 'icon-show',
                         href: "/WorkScheduleItem/show/" + rows[0].id,
                         action: "show",
-                        main:true
+                        main: true
                     });
                 }
             }
@@ -68,10 +68,19 @@ export class index {
         };
         objectsList.calendarRowCallback = (row) => {
             const element = create('div');
-            element.append(create('div', {text: row.start.substring(11)+'-'+row.end.substring(11)}));
-            element.append(create('div', {text: row.user.name+' '+row.user.surname}));
+            element.append(create('div', {text: row.start.substring(11) + '-' + row.end.substring(11)}));
+            element.append(create('div', {text: row.user.name + ' ' + row.user.surname}));
             return element;
         }
+        objectsList.calendarDayActions = (day) => [
+            {
+                name: TCommonBase("add"),
+                icon: 'icon-add',
+                action: "add",
+                href: '/WorkScheduleItem/add?date=' + day.toISOString().substring(0, 10),
+                main: true,
+            },
+        ]
         objectsList.generateExports = UniversalExporter.generateObjectsListsExports(objectsList, '/WorkScheduleItem/export');
         container.append(objectsList);
         objectsList.refresh();
@@ -94,6 +103,7 @@ export class edit {
 export class add {
     constructor(page, data) {
         let form = new FormManager(page.querySelector('form'));
+        form.loadUrlQuery();
         if (data && data.selects)
             form.loadSelects(data.selects);
 

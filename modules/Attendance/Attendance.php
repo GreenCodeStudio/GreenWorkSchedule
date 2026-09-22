@@ -98,7 +98,13 @@ class Attendance extends \Core\BussinesLogic
         $si=0;
         while($ai<count($attendances) || $si<count($scheduleItems)) {
             $attendance = $attendances[$ai] ?? null;
+            if($attendance && ($attendance->endWorker ?? $attendance->endAdded) && ($attendance->startWorker ?? $attendance->startAdded)) {
+                $attendance->hours=(strtotime($attendance->endWorker ?? $attendance->endAdded)-strtotime($attendance->startWorker ?? $attendance->startAdded))/3600;
+            }
             $scheduleItem = $scheduleItems[$si] ?? null;
+            if($scheduleItem && $scheduleItem->start && $scheduleItem->end) {
+                $scheduleItem->hours=(strtotime($scheduleItem->end)-strtotime($scheduleItem->start))/3600;
+            }
             if(!$attendance){
                 $ret[]=['scheduleItem'=>$scheduleItem];
                 $si++;
@@ -112,7 +118,7 @@ class Attendance extends \Core\BussinesLogic
                 }
                 else {
                     $attendanceEnd = clone $attendanceStart;//not ended, use default of 12h
-                    $attendanceEnd->add(new \DateInterval('P12H'));
+                    $attendanceEnd->add(new \DateInterval('PT12H'));
                 }
                 $isIntersecting = $attendanceStart <= new \DateTime($scheduleItem->end) && $attendanceEnd >= new \DateTime($scheduleItem->start);
                 if($isIntersecting){

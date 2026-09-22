@@ -1,9 +1,11 @@
 <tr>
-    <td rowspan="2">{{date}}</td>cccsdfcsdcsdc
+    <td rowspan="2">{{date}}</td>
     <td>{{scheduleItem?.start??'-'}}</td>
-    <td>{{attendance?.startWorker ?? attendance?.startAdded}}</td>
+    <td>{{attendance?.startWorker ?? attendance?.startAdded??'-'}}</td>
+    <td rowspan="2">{{scheduleItem?.hours??'-'}}</td>
+    <td rowspan="2">{{attendance?.hours??'-'}}</td>
 </tr>
 <tr>
     <td>{{scheduleItem?.end??'-'}}</td>
-    <td>{{attendance?.endWorker ?? attendance?.endAdded}}</td>
+    <td>{{attendance?.endWorker ?? attendance?.endAdded??'-'}}</td>
 </tr>

@@ -167,9 +167,9 @@
     "@xmldom/xmldom" "^0.8.11"
 
 "@green-code-studio/objects-list@^1.10.1":
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.11.2.tgz#057a2ee8a9dd454b16365831a2a07e4503622b90"
-  integrity sha512-9yvfYM4G5Zzj7wseA0ly30Ucb5IPqAX7xdT1EPMVQR0+pAgE2lffD8rVek5LsLB5cMalzNTXDKtrp0YgQBhosQ==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.12.0.tgz#39738deb317f53eca4078e85090a81c4382de565"
+  integrity sha512-PdfM9xOreAcjq0PKJz073WEzHQ+C1bK8EGP+mMDm5MlUVg4UOLXqjMGA0az9y2QeQiPj3Xa7nWt1MfsXsH/wbA==
   dependencies:
     "@green-code-studio/context-menu" "^1.0.2"
     "@green-code-studio/internationalization" "^1.0.4"
@@ -2277,9 +2277,9 @@ minimizer-webpack-plugin@^5.7.0:
     terser "^5.51.0"
 
 mpts-core@^1.3.1:
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/mpts-core/-/mpts-core-1.4.9.tgz#0ffc7883fe1e859b3510410cbe4c95350fef60b6"
-  integrity sha512-Oo0pVuDb7LSDWfVbpnjWzUdVbqwkLCvov4XO+H2yp8jzEsWLt+C+bZ/B9XwD6hETCI2NAF4mJCx1ooJEEXb/nA==
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/mpts-core/-/mpts-core-1.4.10.tgz#ab859c1af0cd72dcbaf69aaa66d62cc7c55a2388"
+  integrity sha512-3V6+kc8HDD1UIOzBjcfTrCXmeF+tyMTzuTw0NpTPC7opft/pbRtEdvuJe6IOQorCEpjFNm2+1DoKbfEE99t5Kw==
   dependencies:
     "@babel/core" "^8.0.6"
     "@babel/runtime" "^8.0.5"

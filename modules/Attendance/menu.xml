@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menu>
-    <group/>
     <element>
         <link>/Attendance</link>
         <title>Attendance</title>
         <menu>
-            <group/>
             <element>
                 <link>/Attendance/me</link>
                 <title>Myself</title>
