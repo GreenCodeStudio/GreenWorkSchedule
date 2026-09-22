@@ -2,8 +2,8 @@
     <td rowspan="2">{{date}}</td>
     <td>{{scheduleItem?.start??'-'}}</td>
     <td>{{attendance?.startWorker ?? attendance?.startAdded??'-'}}</td>
-    <td rowspan="2">{{scheduleItem?.hours??'-'}}</td>
-    <td rowspan="2">{{attendance?.hours??'-'}}</td>
+    <td rowspan="2">{{formatHours(scheduleItem?.hours??null)}}</td>
+    <td rowspan="2">{{formatHours(attendance?.hours??null)}}</td>
 </tr>
 <tr>
     <td>{{scheduleItem?.end??'-'}}</td>

@@ -137,7 +137,12 @@ export class userSummary {
                 }
                 console.log(row);
 
-                tbody.appendChild(UserAttendanceSummaryItem(row));
+                tbody.appendChild(UserAttendanceSummaryItem({...row, formatHours: (hours) => {
+                    if(hours===null || hours===undefined) return '-';
+                    const h = Math.floor(hours);
+                    const m = Math.round((hours - h) * 60);
+                    return hours.toFixed(2)+'h ('+h + 'h ' + m + 'm)';
+                    }}));
             }
         }
     }

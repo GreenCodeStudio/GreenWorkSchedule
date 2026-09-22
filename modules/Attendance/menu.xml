@@ -2,15 +2,15 @@
 <menu>
     <element>
         <link>/Attendance</link>
-        <title>Attendance</title>
+        <title  key="Attendance.Attendance.Attendance">Attendance</title>
         <menu>
             <element>
                 <link>/Attendance/me</link>
-                <title>Myself</title>
+                <title  key="Attendance.myself">Myself</title>
             </element>
             <element>
                 <link>/Attendance/userSummary</link>
-                <title>userSummary</title>
+                <title  key="Attendance.userSummary">userSummary</title>
             </element>
         </menu>
 

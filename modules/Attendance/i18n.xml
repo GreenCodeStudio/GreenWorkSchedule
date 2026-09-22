@@ -3,21 +3,31 @@
     <node name="Attendance">
         <node name="Attendance">
             <value lang="en">Attendance</value>
+            <value lang="pl">Obecności</value>
+            <value lang="de">Anwesenheit</value>
         </node>
         <node name="id">
             <value lang="en">id</value>
         </node>
         <node name="worker">
             <value lang="en">Worker</value>
+            <value lang="pl">Pracownik</value>
+            <value lang="de">Arbeiter</value>
         </node>
         <node name="start">
             <value lang="en">Start</value>
+            <value lang="pl">Początek</value>
+            <value lang="de">Anfang</value>
         </node>
         <node name="end">
             <value lang="en">End</value>
+            <value lang="pl">Koniec</value>
+            <value lang="de">Ende</value>
         </node>
         <node name="date">
             <value lang="en">Date</value>
+            <value lang="pl">Data</value>
+            <value lang="de">Datum</value>
         </node>
         <node name="startAdded">
             <value lang="en">startAdded</value>
@@ -43,5 +53,17 @@
             <value lang="pl">Obecności</value>
             <value lang="en">Attendance</value>
         </node>
+    </node>
+
+    <node name="myself">
+        <value lang="en">Myself</value>
+        <value lang="pl">Moje obecności</value>
+        <value lang="de">Meine Anwesenheit</value>
+    </node>
+
+    <node name="userSummary">
+        <value lang="en">User summary</value>
+        <value lang="pl">Podsumowanie użytkownika</value>
+        <value lang="de">Benutzerzusammenfassung</value>
     </node>
 </root>
