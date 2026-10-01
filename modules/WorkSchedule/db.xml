@@ -39,4 +39,29 @@
             </reference>
         </index>
     </table>
+    <table>
+        <name>ical_token</name>
+        <column>
+            <name>id</name>
+            <type>int(11)</type>
+            <autoincrement>YES</autoincrement>
+        </column>
+        <column>
+            <name>owner_user_id</name>
+            <type>int(11)</type>
+        </column>
+        <column>
+            <name>token</name>
+            <type>varchar(255)</type>
+        </column>
+        <column>
+            <name>target_user_id</name>
+            <type>int(11)</type>
+            <null>YES</null>
+        </column>
+        <index>
+            <type>PRIMARY</type>
+            <element>id</element>
+        </index>
+    </table>
 </root>

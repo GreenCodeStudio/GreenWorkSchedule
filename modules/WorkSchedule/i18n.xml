@@ -26,6 +26,11 @@
         <node name="id">
             <value lang="en">id</value>
         </node>
+        <node name="user_id">
+            <value lang="en">Worker id</value>
+            <value lang="pl">Id pracownika</value>
+            <value lang="de">Arbeiter-ID</value>
+        </node>
         <node name="user">
             <value lang="en">Worker</value>
             <value lang="pl">Pracownik</value>
@@ -55,6 +60,13 @@
             <value lang="pl">Harmonogram</value>
             <value lang="en">Work schedule</value>
             <value lang="de">Arbeitsplan</value>
+        </node>
+    </node>
+    <node name="iCal">
+        <node name="menu">
+            <value lang="en">iCal</value>
+            <value lang="pl">iCal</value>
+            <value lang="de">iCal</value>
         </node>
     </node>
 </root>

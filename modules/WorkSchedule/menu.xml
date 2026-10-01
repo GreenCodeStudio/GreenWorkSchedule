@@ -5,8 +5,13 @@
         <title key="WorkSchedule.WorkScheduleList.menu">WorkScheduleItem</title>
         <menu>
             <element>
-                <link>/WorkScheduleItem</link>
+                <link>/WorkScheduleItem/my</link>
                 <title key="WorkSchedule.mySchedule.menu">WorkScheduleItem</title>
+            </element>
+
+            <element>
+                <link>/WorkScheduleItem/iCal</link>
+                <title key="WorkSchedule.iCal.menu">iCal</title>
             </element>
         </menu>
 

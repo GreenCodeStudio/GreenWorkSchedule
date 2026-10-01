@@ -21,6 +21,8 @@ class WorkScheduleItemRepository extends \Core\Repository
 
     public function getDataTable($options)
     {
+        $sqlParams = [];
+        $filterSql = $this->generateColumnFilterSql($options->columnFilters, $this->datatableColumnMap(), $sqlParams);
         $start = (int)$options->start;
         $limit = (int)$options->limit;
         $sqlOrder = $this->getOrderSQL($options);
@@ -29,18 +31,21 @@ SELECT wsi.id, wsi.start, wsi.end, json_object('id',wsi.user_id, 'name',u.name, 
 FROM work_schedule_item wsi 
 JOIN user u ON u.id = wsi.user_id 
     LEFT JOIN user_preferences up ON up.id_user = u.id AND up.name = 'Common.color'
+    WHERE $filterSql
     $sqlOrder 
-    LIMIT $start,$limit")->map(fn($row) => (object)[...(array)$row, 'user' => json_decode($row->user)])->toArray();
-        $total = DB::get("SELECT count(*) as count FROM work_schedule_item")[0]->count;
+    LIMIT $start,$limit", $sqlParams)->map(fn($row) => (object)[...(array)$row, 'user' => json_decode($row->user)])->toArray();
+        $total = DB::get("SELECT count(*) as count FROM work_schedule_item WHERE $filterSql", $sqlParams)[0]->count;
         return ['rows' => $rows, 'total' => $total];
     }
-
+    private function datatableColumnMap()
+    {
+        return['id' => 'id', 'user_id' => 'user_id', 'work_schedule_id' => 'work_schedule_id', 'start' => 'start', 'end' => 'end'];}
     private function getOrderSQL($options)
     {
         if (empty($options->sort))
             return "";
         else {
-            $mapping = ['id' => 'id', 'user_id' => 'user_id', 'work_schedule_id' => 'work_schedule_id', 'start' => 'start', 'end' => 'end'];
+            $mapping = $this->datatableColumnMap();
             if (empty($mapping[$options->sort->col]))
                 throw new Exception();
             return ' ORDER BY '.DB::safeKey($mapping[$options->sort->col]).' '.($options->sort->desc ? 'DESC' : 'ASC').' ';

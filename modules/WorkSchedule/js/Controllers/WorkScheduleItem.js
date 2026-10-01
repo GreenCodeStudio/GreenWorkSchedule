@@ -10,12 +10,22 @@ import {UniversalExporter} from "../../../CommonBase/js/UniversalExporter";
 import {create} from "fast-creator";
 
 export class index {
-    constructor(page, data) {
+    constructor(page, data, userId) {
         const container = page.querySelector('.page-WorkScheduleItem-list .container');
         let datasource = new DatasourceAjax('WorkScheduleItem', 'getTable', ['WorkSchedule', 'WorkScheduleItem'], null, 'updateMultiple');
         let objectsList = new ObjectsList(datasource, 'calendarView');
         objectsList.allowTableEdit = true;
         objectsList.columns = [];
+        objectsList.columns.push({
+            name: t('WorkScheduleItem.user_id'),
+            dataName: 'user_id',
+            sortName: 'user_id',
+            width: 100,
+            widthGrow: 1,
+            content: row => row.user.id,
+            isFilter: true
+
+        });
         objectsList.columns.push({
             name: t('WorkScheduleItem.user'),
             dataName: 'user',
@@ -84,12 +94,20 @@ export class index {
                 main: true,
             },
         ]
+        objectsList.hiddenColumns.add('user_id');
         objectsList.generateExports = UniversalExporter.generateObjectsListsExports(objectsList, '/WorkScheduleItem/export');
+        if(userId) {
+            objectsList.columnFilters.set('user_id', {type: "equals", value: userId})
+        }
         container.append(objectsList);
         objectsList.refresh();
     }
 }
-
+export class my extends index {
+    constructor(page, data) {
+        super(page, data, data.userId);
+    }
+}
 export class edit {
     constructor(page, data) {
         let form = new FormManager(page.querySelector('form'));
