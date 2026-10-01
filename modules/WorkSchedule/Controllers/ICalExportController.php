@@ -20,10 +20,9 @@ class ICalExportController extends \Common\PageStandardController
             ->setSummary('Test')
             ->setDescription('Test desc...')
             ->setOccurrence(
-                new \Eluceo\iCal\Domain\ValueObject\SingleDay(
-                    new \Eluceo\iCal\Domain\ValueObject\Date(
-                        new DateTimeImmutable()
-                    )
+                new \Eluceo\iCal\Domain\ValueObject\TimeSpan(
+                    new DateTime(),
+                    (new DateTime())->modify('+1 hour')
                 )
             );
 
