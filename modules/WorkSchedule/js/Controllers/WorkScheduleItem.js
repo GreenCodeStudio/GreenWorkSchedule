@@ -8,6 +8,7 @@ import {ObjectsList} from "../../../Core/js/ObjectsList/objectsList";
 import {Permissions} from "../../../Core/js/permissions";
 import {UniversalExporter} from "../../../CommonBase/js/UniversalExporter";
 import {create} from "fast-creator";
+import {show as CommentShowController} from "../../../Comment/js/Controllers/Comment";
 
 export class index {
     constructor(page, data, userId) {
@@ -132,5 +133,11 @@ export class add {
             await Ajax.WorkScheduleItem.insert(newData);
             pageManager.goto('/WorkScheduleItem?date=' + newData.date);
         }
+    }
+}
+export class show {
+    constructor(page, data, initInfo) {
+        this.page = page;
+        new CommentShowController(page, {objectType: 'WorkScheduleItem', objectId: initInfo.methodArguments[0]});
     }
 }

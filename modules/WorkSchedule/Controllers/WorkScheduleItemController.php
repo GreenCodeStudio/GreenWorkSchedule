@@ -3,6 +3,7 @@
 namespace WorkSchedule\Controllers;
 
 use Authorization\Authorization;
+use Comment\Comment;
 use Core\Exceptions\NotFoundException;
 use WorkSchedule\ICalExporter;
 use WorkSchedule\Repository\ICalTokenRepository;
@@ -83,7 +84,9 @@ class WorkScheduleItemController extends \Common\PageStandardController
         if ($data == null)
             throw new NotFoundException();
 
-        $this->addView('WorkSchedule', 'WorkScheduleItemShow', ['item' => $data]);
+        $comments = (new Comment())->getToShow('WorkScheduleItem', $id);
+
+        $this->addView('WorkSchedule', 'WorkScheduleItemShow', ['item' => $data, 'commentsData' => ['items'=>$comments]]);
         $this->pushBreadcrumb(['title' => 'WorkScheduleItem', 'url' => '/WorkScheduleItem']);
         $this->pushBreadcrumb(['title' => 'Szczegóły', 'url' => '/WorkScheduleItem/show/'.$id]);
     }

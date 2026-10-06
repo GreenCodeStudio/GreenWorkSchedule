@@ -3,11 +3,16 @@
     </a>
 </div>
 <div class="grid page-Attendance page-Attendance-show">
-<section class="card action-show" data-width="6">
-<header>
-    <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
-</header>
-    <<getView('Attendance', 'AttendanceShowCard', item)>>
-    <<getView('Comment', 'Comments', comments)>>
-</section>
+    <section class="card action-show" data-width="6">
+        <header>
+            <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+        </header>
+        <<getView('Attendance', 'AttendanceShowCard', item)>>
+    </section>
+    <section class="card action-show" data-width="6">
+        <header>
+            <h1>Comments</h1>
+        </header>
+        <<getView('Comment', 'Comments', comments)>>
+    </section>
 </div>

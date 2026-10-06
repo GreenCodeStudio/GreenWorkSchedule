@@ -8,6 +8,7 @@ import {ObjectsList} from "../../../Core/js/ObjectsList/objectsList";
 import {Permissions} from "../../../Core/js/permissions";
 import {create} from "fast-creator";
 import UserAttendanceSummaryItem from "../../Views/UserAttendanceSummaryItem.mpts"
+import {show as CommentShowController} from "../../../Comment/js/Controllers/Comment"
 
 export class index {
     constructor(page, data) {
@@ -127,23 +128,32 @@ export class userSummary {
             const tbody = this.page.querySelector('table.report tbody');
             while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
             for (const row of result) {
-                const dates=[row.scheduleItem?.start,row.scheduleItem?.end, row.attendance?.startWorker??row.attendance?.startAdded, row.attendance?.endWorker??row.attendance?.endAdded].filter(x=>x).sort();
-                const diff = (new Date(dates[dates.length-1]).getTime() - new Date(dates[0]).getTime());
-                row.isMultiDay = diff > 24*60*60*1000;
-                if(row.isMultiDay) {
-                    row.date = dates[0].substring(0,10);
-                }else{
-                    row.date =[...new Set(dates.map(x=>x.substring(0,10)))].join(' / ');
+                const dates = [row.scheduleItem?.start, row.scheduleItem?.end, row.attendance?.startWorker ?? row.attendance?.startAdded, row.attendance?.endWorker ?? row.attendance?.endAdded].filter(x => x).sort();
+                const diff = (new Date(dates[dates.length - 1]).getTime() - new Date(dates[0]).getTime());
+                row.isMultiDay = diff > 24 * 60 * 60 * 1000;
+                if (row.isMultiDay) {
+                    row.date = dates[0].substring(0, 10);
+                } else {
+                    row.date = [...new Set(dates.map(x => x.substring(0, 10)))].join(' / ');
                 }
                 console.log(row);
 
-                tbody.appendChild(UserAttendanceSummaryItem({...row, formatHours: (hours) => {
-                    if(hours===null || hours===undefined) return '-';
-                    const h = Math.floor(hours);
-                    const m = Math.round((hours - h) * 60);
-                    return hours.toFixed(2)+'h ('+h + 'h ' + m + 'm)';
-                    }}));
+                tbody.appendChild(UserAttendanceSummaryItem({
+                    ...row, formatHours: (hours) => {
+                        if (hours === null || hours === undefined) return '-';
+                        const h = Math.floor(hours);
+                        const m = Math.round((hours - h) * 60);
+                        return hours.toFixed(2) + 'h (' + h + 'h ' + m + 'm)';
+                    }
+                }));
             }
         }
+    }
+}
+
+export class show {
+    constructor(page, data, initInfo) {
+        this.page = page;
+        new CommentShowController(page, {objectType: 'Attendance', objectId: initInfo.methodArguments[0]});
     }
 }

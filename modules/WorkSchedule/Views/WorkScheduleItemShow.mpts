@@ -20,4 +20,10 @@
                 <strong>{{item.end}}</strong>
             </div>
         </section>
+        <section class="card">
+            <header>
+                <h1>Comments</h1>
+            </header>
+            <<getView('Comment', 'Comments', commentsData)>>
+        </section>
     </div>
