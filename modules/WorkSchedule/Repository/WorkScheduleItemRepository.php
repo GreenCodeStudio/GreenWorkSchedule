@@ -79,6 +79,11 @@ JOIN user u ON u.id = wsi.user_id
 
     public function getNextByUserId($userId, $limit=5)
     {
-        return DB::get("SELECT * FROM work_schedule_item WHERE user_id = ? AND end > NOW() ORDER BY start ASC LIMIT ".$limit, [$userId]);
+        return DB::get("SELECT wsi.*, count(c.id) as commentsCount, group_concat(c.contentPlainText ORDER BY c.added ASC) as firstComment
+FROM work_schedule_item wsi 
+LEFT JOIN comment c ON c.object_type = 'WorkScheduleItem' AND c.object_id = wsi.id
+WHERE wsi.user_id = ? AND end > NOW() 
+GROUP BY wsi.id
+ORDER BY wsi.start ASC LIMIT ".$limit, [$userId]);
     }
 }

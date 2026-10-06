@@ -10,11 +10,19 @@
     <:foreach collection=nextScheduleItems item=item>
         <div>
             {{item.start}} - {{item.end}}
+            <a href="/Comment/show/WorkScheduleItem/":item.id class="button action-comment">
+                <span class="icon-comment">
+                {{t("CommonBase.comments")}}
+                    ({{item.commentsCount}})
+                </span>
+            </a>
             <a href="/WorkScheduleItem/show/":item.id class="button action-show">
                 <span class="icon-show">
                 {{t("CommonBase.show")}}
                 </span>
             </a>
+
+            {{item.firstComment}}
         </div>
     </:foreach>
     <a href="/WorkScheduleItem/add" class="button action-add">
