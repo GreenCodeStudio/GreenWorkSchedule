@@ -69,4 +69,26 @@
             <value lang="de">iCal</value>
         </node>
     </node>
+    <node name="myNextItems">
+        <node name="header">
+            <value lang="pl">Mój harmonogram pracy</value>
+            <value lang="en">My work schedule</value>
+            <value lang="de">Mein Arbeitsplan</value>
+        </node>
+        <node name="addToWorkSchedule">
+            <value lang="pl">Dodaj nową pozycję do harmonogramu</value>
+            <value lang="en">Add new item to work schedule</value>
+            <value lang="de">Neues Element zum Arbeitsplan hinzufügen</value>
+        </node>
+        <node name="noNextItems">
+            <value lang="pl">Nie zaplanowano pracy w najbliższym czasie</value>
+            <value lang="en">No work scheduled in the near future</value>
+            <value lang="de">Keine Arbeit in naher Zukunft geplant</value>
+        </node>
+        <node name="showMyFullSchedule">
+            <value lang="pl">Pokaż mój pełny harmonogram</value>
+            <value lang="en">Show my full schedule</value>
+            <value lang="de">Meinen vollständigen Zeitplan anzeigen</value>
+        </node>
+    </node>
 </root>

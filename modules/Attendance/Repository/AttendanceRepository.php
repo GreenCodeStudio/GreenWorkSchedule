@@ -79,4 +79,9 @@ FROM attendance a
     {
         return DB::get("SELECT * FROM attendance WHERE worker_id = ? AND date(ifnull(startWorker, startAdded)) BETWEEN ? AND ? ORDER BY ifnull(startWorker, startAdded)", [$workerId, $startRange, $endRange]);
     }
+
+    public function getLastByUserId(int $userId, int $count)
+    {
+        return DB::get("SELECT *, UNIX_TIMESTAMP(endAdded) - UNIX_TIMESTAMP(startAdded) as addedSeconds FROM attendance WHERE worker_id = ? ORDER BY startAdded DESC LIMIT $count", [$userId]);
+    }
 }

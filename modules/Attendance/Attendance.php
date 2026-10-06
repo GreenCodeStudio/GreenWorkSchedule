@@ -136,4 +136,9 @@ class Attendance extends \Core\BussinesLogic
         }
         return $ret;
     }
+
+    public function getLastByUserId(int $userId, int $count)
+    {
+        return $this->defaultDB->getLastByUserId($userId, $count);
+    }
 }

@@ -101,4 +101,23 @@
             <value lang="de">Tatsächliche Stunden</value>
         </node>
     </node>
+    <node name="AttendanceMe">
+        <node name="header">
+            <value lang="pl">Moje obecności</value>
+            <value lang="en">My attendance</value>
+            <value lang="de">Meine Anwesenheit</value>
+        </node>
+        <node name="description">
+            <node name="1">
+                <value lang="pl">Klikając przycisk oznaczasz moment w którym rozpoczynasz lub kończysz swoją pracę. Informacje te porównane z harmonogramem keidy powinieneś być w pracy są widoczne</value>
+                <value lang="en">By clicking the button, you mark the moment when you start or finish your work. This information compared to the schedule of when you should be at work is visible</value>
+                <value lang="de">Durch Klicken auf die Schaltfläche markieren Sie den Moment, in dem Sie Ihre Arbeit beginnen oder beenden. Diese Informationen im Vergleich zum Zeitplan, wann Sie bei der Arbeit sein sollten, sind sichtbar</value>
+            </node>
+            <node name="2">
+                <value lang="pl">w podsumowaniu</value>
+                <value lang="en">in the summary</value>
+                <value lang="de">in der Zusammenfassung</value>
+            </node>
+        </node>
+    </node>
 </root>

@@ -2,15 +2,15 @@
 <div>
     <section class="card action-show attendanceMe" data-width="6">
     <header>
-        <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+        <h1>{{t("Attendance.AttendanceMe.header")}}</h1>
     </header>
         <div class="buttonsWrapper">
-            <button class="startWorkBtn">Cancel and start new work</button>
+            <button class="startWorkBtn action-add">Cancel and start new work</button>
             <button class="endWorkBtn">End Work</button>
         </div>
 
         <<getView('Attendance', 'AttendanceShowCard', currentAttendance)>>
-
+<p>{{t("Attendance.AttendanceMe.description.1")}} <a href="/Attendance/userSummary">{{t("Attendance.AttendanceMe.description.2")}}</a></p>
     </section>
 </div>
 </:if>
@@ -18,12 +18,28 @@
 <div>
     <section class="card action-show attendanceMe" data-width="6">
         <header>
-            <h1>{{t("Attendance.Attendance.Attendance")}}</h1>
+            <h1>{{t("Attendance.AttendanceMe.header")}}</h1>
         </header>
         <div class="buttonsWrapper">
-            <button class="startWorkBtn">Start Work</button>
-            <button class="endWorkBtn">End Work without starting</button>
+            <button class="startWorkBtn action-add">Start Work</button>
+<!--            <button class="endWorkBtn">End Work without starting</button>-->
         </div>
+
+        <p>{{t("Attendance.AttendanceMe.description.1")}} <a href="/Attendance/userSummary">{{t("Attendance.AttendanceMe.description.2")}}</a></p>
     </section>
 </div>
 </:else>
+<section class="card shortAttendanceList">
+    <:foreach collection=lastAttendances item=attendance>
+        <div>
+            {{attendance.startAdded}} - {{attendance.endAdded}}
+            <br/>
+            {{formater.formatSecondsBig(attendance.addedSeconds)}}
+            <a href="/Attendance/show/":attendance.id class="button action-show">
+                <span class="icon-show">
+                {{t("CommonBase.show")}}
+                </span>
+            </a>
+        </div>
+    </:foreach>
+</section>

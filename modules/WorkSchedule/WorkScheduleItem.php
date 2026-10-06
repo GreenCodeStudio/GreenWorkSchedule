@@ -80,4 +80,9 @@ class WorkScheduleItem extends \Core\BussinesLogic
         $ret->end = substr($ret->end, 11);
         return $ret;
     }
+
+    public function getNextByUserId($getUserId)
+    {
+        return $this->defaultDB->getNextByUserId($getUserId);
+    }
 }

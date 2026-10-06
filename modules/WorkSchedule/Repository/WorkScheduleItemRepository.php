@@ -76,4 +76,9 @@ JOIN user u ON u.id = wsi.user_id
         }
         return $item;
     }
+
+    public function getNextByUserId($userId, $limit=5)
+    {
+        return DB::get("SELECT * FROM work_schedule_item WHERE user_id = ? AND end > NOW() ORDER BY start ASC LIMIT ".$limit, [$userId]);
+    }
 }
