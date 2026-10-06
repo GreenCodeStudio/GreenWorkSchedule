@@ -2,6 +2,7 @@ import "./scssBuild.scss";
 import  "./modules/ApiDocs/js/index";
 import  "./modules/Attendance/js/index";
 import  "./modules/Authorization/js/index";
+import  "./modules/Chat/js/index";
 import  "./modules/Comment/js/index";
 import  "./modules/Common/js/index";
 import  "./modules/CommonBase/js/index";

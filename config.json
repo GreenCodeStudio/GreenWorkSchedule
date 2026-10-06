@@ -7,6 +7,7 @@
         "User": "https://github.com/GreenCodeStudio/GreenCodeFramework-User.git",
         "Notifications": "https://github.com/GreenCodeStudio/GreenCodeFramework-Notifications.git",
         "Search": "https://github.com/GreenCodeStudio/GreenCodeFramework-Search.git",
-        "ExternalApplication": "https://github.com/GreenCodeStudio/GreenCodeFramework-Externalapplication.git"
+        "ExternalApplication": "https://github.com/GreenCodeStudio/GreenCodeFramework-Externalapplication.git",
+        "Chat": "https://github.com/GreenCodeStudio/GreenCodeFramework-Chat.git"
     }
 }

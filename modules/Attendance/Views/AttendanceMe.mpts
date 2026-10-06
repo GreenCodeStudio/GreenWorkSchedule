@@ -5,8 +5,8 @@
         <h1>{{t("Attendance.AttendanceMe.header")}}</h1>
     </header>
         <div class="buttonsWrapper">
-            <button class="startWorkBtn action-add">Cancel and start new work</button>
-            <button class="endWorkBtn">End Work</button>
+            <button class="startWorkBtn action-add">{{t("Attendance.AttendanceMe.cancelAndStartWork")}}</button>
+            <button class="endWorkBtn">{{t("Attendance.AttendanceMe.endWork")}}</button>
         </div>
 
         <<getView('Attendance', 'AttendanceShowCard', currentAttendance)>>

@@ -124,5 +124,15 @@
             <value lang="en">Mark start of work</value>
             <value lang="de">Markieren Sie den Arbeitsbeginn</value>
         </node>
+        <node name="endWork">
+            <value lang="pl">Zaznacz zakończenie pracy</value>
+            <value lang="en">Mark end of work</value>
+            <value lang="de">Markieren Sie das Arbeitsende</value>
+        </node>
+    <node name="cancelAndStartWork">
+        <value lang="pl">Anuluj i rozpocznij pracę</value>
+        <value lang="en">Cancel and start work</value>
+        <value lang="de">Abbrechen und Arbeit beginnen</value>
+    </node>
     </node>
 </root>
