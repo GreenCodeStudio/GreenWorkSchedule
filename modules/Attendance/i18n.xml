@@ -119,5 +119,10 @@
                 <value lang="de">in der Zusammenfassung</value>
             </node>
         </node>
+        <node name="startWork">
+            <value lang="pl">Zaznacz rozpoczęcie pracy</value>
+            <value lang="en">Mark start of work</value>
+            <value lang="de">Markieren Sie den Arbeitsbeginn</value>
+        </node>
     </node>
 </root>

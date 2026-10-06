@@ -1,0 +1,8 @@
+<div class="common-startPage">
+    <div>
+        <<getView('WorkSchedule', 'NextMyItems', workScheduleData)>>
+    </div>
+    <div>
+        <<getView('Attendance', 'AttendanceMe', attendanceData)>>
+    </div>
+</div>

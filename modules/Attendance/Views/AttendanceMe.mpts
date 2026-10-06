@@ -21,7 +21,7 @@
             <h1>{{t("Attendance.AttendanceMe.header")}}</h1>
         </header>
         <div class="buttonsWrapper">
-            <button class="startWorkBtn action-add">Start Work</button>
+            <button class="startWorkBtn action-add">{{t("Attendance.AttendanceMe.startWork")}}</button>
 <!--            <button class="endWorkBtn">End Work without starting</button>-->
         </div>
 
