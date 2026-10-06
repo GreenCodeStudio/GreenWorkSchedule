@@ -1,39 +1,41 @@
-<section class="card">
-    <header>
-        <h1>{{t("WorkSchedule.myNextItems.header")}}</h1>
-    </header>
-    <:if condition=isEmpty >
-        <div>
-            {{t("WorkSchedule.myNextItems.noNextItems")}}
-        </div>
-    </:if>
-    <:foreach collection=nextScheduleItems item=item>
-        <div>
-            {{item.start}} - {{item.end}}
-            <a href="/Comment/show/WorkScheduleItem/":item.id class="button action-comment">
-                <span class="icon-comment">
-                {{t("CommonBase.comments")}}
-                    ({{item.commentsCount}})
-                </span>
-            </a>
-            <a href="/WorkScheduleItem/show/":item.id class="button action-show">
-                <span class="icon-show">
-                {{t("CommonBase.show")}}
-                </span>
-            </a>
+<div class="grid page-WorkScheduleItem">
+    <section class="card">
+        <header>
+            <h1>{{t("WorkSchedule.myNextItems.header")}}</h1>
+        </header>
+        <:if condition=isEmpty >
+            <div>
+                {{t("WorkSchedule.myNextItems.noNextItems")}}
+            </div>
+        </:if>
+        <:foreach collection=nextScheduleItems item=item>
+            <div class="myNextScheduleItem">
+                {{item.start}} - {{item.end}}
+                <a href="/Comment/show/WorkScheduleItem/":item.id class="button action-comment">
+                    <span class="icon-comment">
+                    {{t("CommonBase.comments")}}
+                        ({{item.commentsCount}})
+                    </span>
+                </a>
+                <a href="/WorkScheduleItem/show/":item.id class="button action-show">
+                    <span class="icon-show">
+                    {{t("CommonBase.show")}}
+                    </span>
+                </a>
 
-            {{item.firstComment}}
-        </div>
-    </:foreach>
-    <a href="/WorkScheduleItem/add" class="button action-add">
-        <span class="icon-add">
-        {{t("WorkSchedule.myNextItems.addToWorkSchedule")}}
-        </span>
-    </a>
+                {{item.firstComment}}
+            </div>
+        </:foreach>
+        <a href="/WorkScheduleItem/add" class="button action-add">
+            <span class="icon-add">
+            {{t("WorkSchedule.myNextItems.addToWorkSchedule")}}
+            </span>
+        </a>
 
-    <a href="/WorkScheduleItem/my" class="button action-show">
-        <span class="icon-show">
-        {{t("WorkSchedule.myNextItems.showMyFullSchedule")}}
-        </span>
-    </a>
-</section>
+        <a href="/WorkScheduleItem/my" class="button action-show">
+            <span class="icon-show">
+            {{t("WorkSchedule.myNextItems.showMyFullSchedule")}}
+            </span>
+        </a>
+    </section>
+</div>
