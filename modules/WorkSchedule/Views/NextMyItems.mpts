@@ -23,7 +23,7 @@
                     </span>
                 </a>
 
-                {{item.firstComment}}
+                <div class="comment">{{item.firstComment}}</div>
             </div>
         </:foreach>
         <a href="/WorkScheduleItem/add" class="button action-add">

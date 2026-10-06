@@ -1,5 +1,10 @@
 .page-WorkScheduleItem{
     .myNextScheduleItem{
 border: 1px solid;
+        padding: 1em;
+        margin-bottom: 1em;
+        .comment{
+            display: block;
+        }
     }
 }
