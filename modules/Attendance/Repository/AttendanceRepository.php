@@ -82,6 +82,12 @@ FROM attendance a
 
     public function getLastByUserId(int $userId, int $count)
     {
-        return DB::get("SELECT *, UNIX_TIMESTAMP(endAdded) - UNIX_TIMESTAMP(startAdded) as addedSeconds FROM attendance WHERE worker_id = ? ORDER BY startAdded DESC LIMIT $count", [$userId]);
+        return DB::get("SELECT a.*, UNIX_TIMESTAMP(endAdded) - UNIX_TIMESTAMP(startAdded) as addedSeconds ,
+       count(c.id) as commentsCount, group_concat(c.contentPlainText ORDER BY c.added ASC) as firstComment
+FROM attendance a 
+LEFT JOIN comment c ON c.object_type = 'Attendance' AND c.object_id = a.id
+WHERE a.worker_id = ?
+GROUP BY a.id
+ORDER BY startAdded DESC LIMIT $count", [$userId]);
     }
 }

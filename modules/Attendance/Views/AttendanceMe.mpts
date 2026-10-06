@@ -35,11 +35,18 @@
             {{attendance.startAdded}} - {{attendance.endAdded}}
             <br/>
             {{formater.formatSecondsBig(attendance.addedSeconds)}}
+            <a href="/Comment/show/Attendance/":attendance.id class="button action-comment">
+                    <span class="icon-comment">
+                    {{t("CommonBase.comments")}}
+                        ({{attendance.commentsCount}})
+                    </span>
+            </a>
             <a href="/Attendance/show/":attendance.id class="button action-show">
                 <span class="icon-show">
                 {{t("CommonBase.show")}}
                 </span>
             </a>
+            <div class="comment">{{attendance.firstComment}}</div>
         </div>
     </:foreach>
 </section>
