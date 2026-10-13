@@ -68,6 +68,21 @@
             <value lang="pl">iCal</value>
             <value lang="de">iCal</value>
         </node>
+        <node name="description">
+            <value lang="pl">Format iCal pozwala zaimportować wydarzenia do programu kalendarza, np. Google Calendar, Outlook, Apple Calendar, Thunderird itp. Skopiuj poniższy link i wklej do programu kalendarza. Dodatkowa autoryzacja nie jest potrzebna.</value>
+            <value lang="en">The iCal format allows you to import events into a calendar program, e.g. Google Calendar, Outlook, Apple Calendar, Thunderbird, etc. Copy the link below and paste it into your calendar program. No additional authorization is required.</value>
+            <value lang="de">Das iCal-Format ermöglicht es Ihnen, Ereignisse in ein Kalenderprogramm zu importieren, z. B. Google Calendar, Outlook, Apple Calendar, Thunderbird usw. Kopieren Sie den unten stehenden Link und fügen Sie ihn in Ihr Kalenderprogramm ein. Es ist keine zusätzliche Autorisierung erforderlich.</value>
+        </node>
+        <node name="wholeSchedule">
+            <value lang="pl">Cały harmonogram</value>
+            <value lang="en">Whole schedule</value>
+            <value lang="de">Gesamter Zeitplan</value>
+        </node>
+        <node name="mySchedule">
+            <value lang="pl">Mój harmonogram</value>
+            <value lang="en">My schedule</value>
+            <value lang="de">Mein Zeitplan</value>
+        </node>
     </node>
     <node name="myNextItems">
         <node name="header">

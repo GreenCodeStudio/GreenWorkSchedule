@@ -7,7 +7,11 @@ class PageStandardController extends \Core\StandardController
     use \CommonBase\PageStandardControllerTrait;
     public function getPageTitle(): string
     {
-        return "GreenWorkSchedule";
+        return "Green Work Schedule";
+    }
+    public function getPageHeader()
+    {
+        return ['title' => 'Green Work Schedule'];
     }
 }
 

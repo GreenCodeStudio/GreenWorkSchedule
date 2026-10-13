@@ -1,2 +1,16 @@
+<section class="card form">
+    <header>
+        <h1>
+            {{t('WorkSchedule.iCal.menu')}}
+        </h1>
+    </header>
+<p>{{t('WorkSchedule.iCal.description')}}</p>
+
+    <label><span>{{t('WorkSchedule.iCal.wholeSchedule')}}</span>
 <input value=allLink />
+    </label>
+    <label><span>{{t('WorkSchedule.iCal.mySchedule')}}</span>
     <input value=ownLink />
+    </label>
+
+</section>
