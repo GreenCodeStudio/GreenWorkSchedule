@@ -11,7 +11,7 @@ import {create} from "fast-creator";
 import {show as CommentShowController} from "../../../Comment/js/Controllers/Comment";
 
 export class index {
-    constructor(page, data, userId) {
+    constructor(page, data) {
         const container = page.querySelector('.page-WorkScheduleItem-list .container');
         let datasource = new DatasourceAjax('WorkScheduleItem', 'getTable', ['WorkSchedule', 'WorkScheduleItem'], null, 'updateMultiple');
         let objectsList = new ObjectsList(datasource, 'calendarView');
@@ -97,16 +97,18 @@ export class index {
         ]
         objectsList.hiddenColumns.add('user_id');
         objectsList.generateExports = UniversalExporter.generateObjectsListsExports(objectsList, '/WorkScheduleItem/export');
-        if(userId) {
-            objectsList.columnFilters.set('user_id', {type: "equals", value: userId})
+        if(data.userId) {
+            console.log('userId', data.userId)
+            objectsList.columnFilters.set('user_id', {type: "equals", value: data.userId})
         }
+        objectsList.icon='icon-workschedule';
         container.append(objectsList);
         objectsList.refresh();
     }
 }
 export class my extends index {
     constructor(page, data) {
-        super(page, data, data.userId);
+        super(page, data);
     }
 }
 export class edit {

@@ -2,6 +2,7 @@
 <menu>
     <element>
         <link>/WorkScheduleItem</link>
+        <icon>icon-workschedule</icon>
         <title key="WorkSchedule.WorkScheduleList.menu">WorkScheduleItem</title>
         <menu>
             <element>

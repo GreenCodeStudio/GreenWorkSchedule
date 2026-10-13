@@ -63,6 +63,7 @@ export class index {
             return ret;
         }
         container.append(objectsList);
+        objectsList.icon='icon-attendance';
         objectsList.refresh();
     }
 }
