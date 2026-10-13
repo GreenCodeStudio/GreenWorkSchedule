@@ -15,7 +15,7 @@ export class index {
         const container = page.querySelector('.page-WorkScheduleItem-list .container');
         let datasource = new DatasourceAjax('WorkScheduleItem', 'getTable', ['WorkSchedule', 'WorkScheduleItem'], null, 'updateMultiple');
         let objectsList = new ObjectsList(datasource, 'calendarView');
-        objectsList.allowTableEdit = true;
+        // objectsList.allowTableEdit = true;
         objectsList.columns = [];
         objectsList.columns.push({
             name: t('WorkScheduleItem.user_id'),

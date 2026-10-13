@@ -15,7 +15,7 @@ export class index {
         const container = page.querySelector('.page-Attendance-list .container');
         let datasource = new DatasourceAjax('Attendance', 'getTable', ['Attendance', 'Attendance'], null, 'updateMultiple');
         let objectsList = new ObjectsList(datasource);
-        objectsList.allowTableEdit = true;
+        // objectsList.allowTableEdit = true;
         objectsList.columns = [];
         objectsList.columns.push({
             name: t('Attendance.worker'),
