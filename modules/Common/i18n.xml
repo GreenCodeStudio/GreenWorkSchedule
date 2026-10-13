@@ -5,6 +5,8 @@
             <value lang="en">Color</value>
             <value lang="pl">Kolor</value>
             <value lang="de">Farbe</value>
+            <value lang="cs">Barva</value>
+            <value lang="ua">Колір</value>
         </node>
     </node>
 </root>

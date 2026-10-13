@@ -5,6 +5,7 @@
             <value lang="en">Attendance</value>
             <value lang="pl">Obecności</value>
             <value lang="de">Anwesenheit</value>
+            <value lang="cs">Docházka</value>
         </node>
         <node name="id">
             <value lang="en">id</value>
@@ -13,21 +14,25 @@
             <value lang="en">Worker</value>
             <value lang="pl">Pracownik</value>
             <value lang="de">Arbeiter</value>
+            <value lang="cs">Pracovník</value>
         </node>
         <node name="start">
             <value lang="en">Start</value>
             <value lang="pl">Początek</value>
             <value lang="de">Anfang</value>
+            <value lang="cs">Začátek</value>
         </node>
         <node name="end">
             <value lang="en">End</value>
             <value lang="pl">Koniec</value>
             <value lang="de">Ende</value>
+            <value lang="cs">Konec</value>
         </node>
         <node name="date">
             <value lang="en">Date</value>
             <value lang="pl">Data</value>
             <value lang="de">Datum</value>
+            <value lang="cs">Datum</value>
         </node>
         <node name="startAdded">
             <value lang="en">startAdded</value>
@@ -52,53 +57,64 @@
         <node name="header">
             <value lang="pl">Obecności</value>
             <value lang="en">Attendance</value>
+            <value lang="de">Anwesenheit</value>
+            <value lang="cs">Docházka</value>
         </node>
     </node>
 
     <node name="myself">
-        <value lang="en">Myself</value>
+        <value lang="en">My attendance</value>
         <value lang="pl">Moje obecności</value>
         <value lang="de">Meine Anwesenheit</value>
+        <value lang="cs">Moje docházky</value>
     </node>
 
     <node name="userSummary">
         <value lang="en">User summary</value>
         <value lang="pl">Podsumowanie użytkownika</value>
         <value lang="de">Benutzerzusammenfassung</value>
+        <value lang="cs">Souhrn uživatele</value>
         <node name="date">
             <value lang="en">Date</value>
             <value lang="pl">Data</value>
             <value lang="de">Datum</value>
+            <value lang="cs">Datum</value>
         </node>
         <node name="scheduleStart">
             <value lang="en">Schedule start</value>
             <value lang="pl">Planowany początek</value>
             <value lang="de">Geplanter Start</value>
+            <value lang="cs">Plánovaný začátek</value>
         </node>
         <node name="scheduleEnd">
             <value lang="en">Schedule end</value>
             <value lang="pl">Planowany koniec</value>
             <value lang="de">Geplantes Ende</value>
+            <value lang="cs">Plánovaný konec</value>
         </node>
         <node name="actualStart">
             <value lang="en">Actual start</value>
             <value lang="pl">Rzeczywisty początek</value>
             <value lang="de">Tatsächlicher Start</value>
+            <value lang="cs">Skutečný začátek</value>
         </node>
         <node name="actualEnd">
             <value lang="en">Actual end</value>
             <value lang="pl">Rzeczywisty koniec</value>
             <value lang="de">Tatsächliches Ende</value>
+            <value lang="cs">Skutečný konec</value>
         </node>
         <node name="scheduleHours">
             <value lang="en">Schedule hours</value>
             <value lang="pl">Planowane godziny</value>
             <value lang="de">Geplante Stunden</value>
+            <value lang="cs">Plánované hodiny</value>
         </node>
         <node name="actualHours">
             <value lang="en">Actual hours</value>
             <value lang="pl">Rzeczywiste godziny</value>
             <value lang="de">Tatsächliche Stunden</value>
+            <value lang="cs">Skutečné hodiny</value>
         </node>
     </node>
     <node name="AttendanceMe">
@@ -106,33 +122,39 @@
             <value lang="pl">Moje obecności</value>
             <value lang="en">My attendance</value>
             <value lang="de">Meine Anwesenheit</value>
+            <value lang="cs">Moje docházky</value>
         </node>
         <node name="description">
             <node name="1">
                 <value lang="pl">Klikając przycisk oznaczasz moment w którym rozpoczynasz lub kończysz swoją pracę. Informacje te porównane z harmonogramem keidy powinieneś być w pracy są widoczne</value>
                 <value lang="en">By clicking the button, you mark the moment when you start or finish your work. This information compared to the schedule of when you should be at work is visible</value>
                 <value lang="de">Durch Klicken auf die Schaltfläche markieren Sie den Moment, in dem Sie Ihre Arbeit beginnen oder beenden. Diese Informationen im Vergleich zum Zeitplan, wann Sie bei der Arbeit sein sollten, sind sichtbar</value>
+                <value lang="cs">Kliknutím na tlačítko označíte okamžik, kdy začínáte nebo končíte svou práci. Tyto informace ve srovnání s harmonogramem, kdy byste měli být v práci, jsou viditelné</value>
             </node>
             <node name="2">
                 <value lang="pl">w podsumowaniu</value>
                 <value lang="en">in the summary</value>
                 <value lang="de">in der Zusammenfassung</value>
+                <value lang="cs">v souhrnu</value>
             </node>
         </node>
         <node name="startWork">
             <value lang="pl">Zaznacz rozpoczęcie pracy</value>
             <value lang="en">Mark start of work</value>
             <value lang="de">Markieren Sie den Arbeitsbeginn</value>
+            <value lang="cs">Označit začátek práce</value>
         </node>
         <node name="endWork">
             <value lang="pl">Zaznacz zakończenie pracy</value>
             <value lang="en">Mark end of work</value>
             <value lang="de">Markieren Sie das Arbeitsende</value>
+            <value lang="cs">Označit konec práce</value>
         </node>
     <node name="cancelAndStartWork">
         <value lang="pl">Anuluj i rozpocznij pracę</value>
         <value lang="en">Cancel and start work</value>
         <value lang="de">Abbrechen und Arbeit beginnen</value>
+        <value lang="cs">Zrušit a začít práci</value>
     </node>
     </node>
 </root>

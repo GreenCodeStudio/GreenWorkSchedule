@@ -5,6 +5,8 @@
             <value lang="en">My schedule</value>
             <value lang="pl">Mój harmonogram</value>
             <value lang="de">Mein Zeitplan</value>
+            <value lang="cs">Můj rozvrh</value>
+            <value lang="ua">Мій графік</value>
         </node>
     </node>
     <node name="WorkScheduleList">
@@ -12,6 +14,8 @@
             <value lang="en">Work schedule</value>
             <value lang="pl">Harmonogram</value>
             <value lang="de">Arbeitsplan</value>
+            <value lang="cs">Pracovní rozvrh</value>
+            <value lang="ua">Графік роботи</value>
         </node>
         <node name="header">
             <value lang="en">List of elements of type WorkSchedule</value>
@@ -22,6 +26,8 @@
             <value lang="en">Work schedule item</value>
             <value lang="pl">Element harmonogramu</value>
             <value lang="de">Arbeitsplan-Element</value>
+            <value lang="cs">Prvek pracovního rozvrhu</value>
+            <value lang="ua">Елемент графіка роботи</value>
         </node>
         <node name="id">
             <value lang="en">id</value>
@@ -30,11 +36,15 @@
             <value lang="en">Worker id</value>
             <value lang="pl">Id pracownika</value>
             <value lang="de">Arbeiter-ID</value>
+            <value lang="cs">ID pracovníka</value>
+            <value lang="ua">ID працівника</value>
         </node>
         <node name="user">
             <value lang="en">Worker</value>
             <value lang="pl">Pracownik</value>
             <value lang="de">Arbeiter</value>
+            <value lang="cs">Pracovník</value>
+            <value lang="ua">Працівник</value>
         </node>
         <node name="work_schedule_id">
             <value lang="en">work_schedule_id</value>
@@ -43,16 +53,22 @@
             <value lang="en">Date</value>
             <value lang="pl">Data</value>
             <value lang="de">Datum</value>
+            <value lang="cs">Datum</value>
+            <value lang="ua">Дата</value>
         </node>
         <node name="start">
             <value lang="en">Start</value>
             <value lang="pl">Początek</value>
             <value lang="de">Anfang</value>
+            <value lang="cs">Začátek</value>
+            <value lang="ua">Початок</value>
         </node>
         <node name="end">
             <value lang="en">End</value>
             <value lang="pl">Koniec</value>
             <value lang="de">Ende</value>
+            <value lang="cs">Konec</value>
+            <value lang="ua">Кінець</value>
         </node>
     </node>
     <node name="WorkScheduleItemList">
@@ -60,6 +76,8 @@
             <value lang="pl">Harmonogram</value>
             <value lang="en">Work schedule</value>
             <value lang="de">Arbeitsplan</value>
+            <value lang="cs">Pracovní rozvrh</value>
+            <value lang="ua">Графік роботи</value>
         </node>
     </node>
     <node name="iCal">
@@ -72,16 +90,22 @@
             <value lang="pl">Format iCal pozwala zaimportować wydarzenia do programu kalendarza, np. Google Calendar, Outlook, Apple Calendar, Thunderird itp. Skopiuj poniższy link i wklej do programu kalendarza. Dodatkowa autoryzacja nie jest potrzebna.</value>
             <value lang="en">The iCal format allows you to import events into a calendar program, e.g. Google Calendar, Outlook, Apple Calendar, Thunderbird, etc. Copy the link below and paste it into your calendar program. No additional authorization is required.</value>
             <value lang="de">Das iCal-Format ermöglicht es Ihnen, Ereignisse in ein Kalenderprogramm zu importieren, z. B. Google Calendar, Outlook, Apple Calendar, Thunderbird usw. Kopieren Sie den unten stehenden Link und fügen Sie ihn in Ihr Kalenderprogramm ein. Es ist keine zusätzliche Autorisierung erforderlich.</value>
+            <value lang="cs">Formát iCal vám umožňuje importovat události do kalendářového programu, např. Google Calendar, Outlook, Apple Calendar, Thunderbird atd. Zkopírujte níže uvedený odkaz a vložte jej do svého kalendářového programu. Není vyžadována žádná další autorizace.</value>
+            <value lang="ua">Формат iCal дозволяє імпортувати події в календарну програму, наприклад Google Calendar, Outlook, Apple Calendar, Thunderbird тощо. Скопіюйте посилання нижче та вставте його у свою календарну програму. Додаткова авторизація не потрібна.</value>
         </node>
         <node name="wholeSchedule">
             <value lang="pl">Cały harmonogram</value>
             <value lang="en">Whole schedule</value>
             <value lang="de">Gesamter Zeitplan</value>
+            <value lang="cs">Celý rozvrh</value>
+            <value lang="ua">Весь графік</value>
         </node>
         <node name="mySchedule">
             <value lang="pl">Mój harmonogram</value>
             <value lang="en">My schedule</value>
             <value lang="de">Mein Zeitplan</value>
+            <value lang="cs">Můj rozvrh</value>
+            <value lang="ua">Мій графік</value>
         </node>
     </node>
     <node name="myNextItems">
@@ -89,21 +113,29 @@
             <value lang="pl">Mój harmonogram pracy</value>
             <value lang="en">My work schedule</value>
             <value lang="de">Mein Arbeitsplan</value>
+            <value lang="cs">Můj pracovní rozvrh</value>
+            <value lang="ua">Мій графік роботи</value>
         </node>
         <node name="addToWorkSchedule">
             <value lang="pl">Dodaj nową pozycję do harmonogramu</value>
             <value lang="en">Add new item to work schedule</value>
             <value lang="de">Neues Element zum Arbeitsplan hinzufügen</value>
+            <value lang="cs">Přidat novou položku do pracovního rozvrhu</value>
+            <value lang="ua">Додати новий елемент до графіка роботи</value>
         </node>
         <node name="noNextItems">
             <value lang="pl">Nie zaplanowano pracy w najbliższym czasie</value>
             <value lang="en">No work scheduled in the near future</value>
             <value lang="de">Keine Arbeit in naher Zukunft geplant</value>
+            <value lang="cs">V nejbližší době není naplánována žádná práce</value>
+            <value lang="ua">Немає запланованої роботи найближчим часом</value>
         </node>
         <node name="showMyFullSchedule">
             <value lang="pl">Pokaż mój pełny harmonogram</value>
             <value lang="en">Show my full schedule</value>
             <value lang="de">Meinen vollständigen Zeitplan anzeigen</value>
+            <value lang="cs">Zobrazit můj úplný rozvrh</value>
+            <value lang="ua">Показати мій повний графік</value>
         </node>
     </node>
 </root>
