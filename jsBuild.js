@@ -11,4 +11,5 @@ import  "./modules/ExternalApplication/js/index";
 import  "./modules/Search/js/index";
 import  "./modules/User/js/index";
 import  "./modules/WorkSchedule/js/index";
+import  "./modules/WorkTask/js/index";
 
