@@ -27,7 +27,7 @@ class WorkScheduleItemRepository extends \Core\Repository
         $limit = (int)$options->limit;
         $sqlOrder = $this->getOrderSQL($options);
         $rows = DB::funquery("
-SELECT wsi.id, wsi.start, wsi.end, json_object('id',wsi.user_id, 'name',u.name, 'surname',u.surname, 'color', up.value) as user 
+SELECT wsi.id, wsi.start, wsi.end, wsi.user_id, json_object('id',wsi.user_id, 'name',u.name, 'surname',u.surname, 'color', up.value) as user 
 FROM work_schedule_item wsi 
 JOIN user u ON u.id = wsi.user_id 
     LEFT JOIN user_preferences up ON up.id_user = u.id AND up.name = 'Common.color'

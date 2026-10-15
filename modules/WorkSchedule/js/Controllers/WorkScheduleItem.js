@@ -14,8 +14,12 @@ export class index {
     constructor(page, data) {
         const container = page.querySelector('.page-WorkScheduleItem-list .container');
         let datasource = new DatasourceAjax('WorkScheduleItem', 'getTable', ['WorkSchedule', 'WorkScheduleItem'], null, 'updateMultiple');
+        datasource.getSelects = async () => {
+            let selects = await Ajax.WorkScheduleItem.getSelects();
+            return selects;
+        }
         let objectsList = new ObjectsList(datasource, 'calendarView');
-        // objectsList.allowTableEdit = true;
+        objectsList.allowTableEdit = true;
         objectsList.columns = [];
         objectsList.columns.push({
             name: t('WorkScheduleItem.user_id'),
@@ -23,13 +27,14 @@ export class index {
             sortName: 'user_id',
             width: 100,
             widthGrow: 1,
-            content: row => row.user.id,
+            content: row => row.user_id,
             isFilter: true
 
         });
         objectsList.columns.push({
             name: t('WorkScheduleItem.user'),
             dataName: 'user',
+            dataType: 'select',
             sortName: 'user',
             width: 100,
             widthGrow: 1,
@@ -97,20 +102,22 @@ export class index {
         ]
         objectsList.hiddenColumns.add('user_id');
         objectsList.generateExports = UniversalExporter.generateObjectsListsExports(objectsList, '/WorkScheduleItem/export');
-        if(data.userId) {
+        if (data.userId) {
             console.log('userId', data.userId)
             objectsList.columnFilters.set('user_id', {type: "equals", value: data.userId})
         }
-        objectsList.icon='icon-workschedule';
+        objectsList.icon = 'icon-workschedule';
         container.append(objectsList);
         objectsList.refresh();
     }
 }
+
 export class my extends index {
     constructor(page, data) {
         super(page, data);
     }
 }
+
 export class edit {
     constructor(page, data) {
         let form = new FormManager(page.querySelector('form'));
@@ -137,6 +144,7 @@ export class add {
         }
     }
 }
+
 export class show {
     constructor(page, data, initInfo) {
         this.page = page;
