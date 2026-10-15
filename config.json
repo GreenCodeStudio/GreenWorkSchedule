@@ -8,6 +8,7 @@
         "Notifications": "https://github.com/GreenCodeStudio/GreenCodeFramework-Notifications.git",
         "Search": "https://github.com/GreenCodeStudio/GreenCodeFramework-Search.git",
         "ExternalApplication": "https://github.com/GreenCodeStudio/GreenCodeFramework-Externalapplication.git",
-        "Chat": "https://github.com/GreenCodeStudio/GreenCodeFramework-Chat.git"
+        "Chat": "https://github.com/GreenCodeStudio/GreenCodeFramework-Chat.git",
+        "WorkTask": "https://github.com/GreenCodeStudio/GreenCodeFramework-WorkTask.git"
     }
 }

@@ -28,3 +28,6 @@
 [submodule "modules/Chat"]
 	path = modules/Chat
 	url = https://github.com/GreenCodeStudio/GreenCodeFramework-Chat.git
+[submodule "modules/WorkTask"]
+	path = modules/WorkTask
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-WorkTask.git
