@@ -16,6 +16,7 @@ export class index {
         let datasource = new DatasourceAjax('WorkScheduleItem', 'getTable', ['WorkSchedule', 'WorkScheduleItem'], null, 'updateMultiple');
         datasource.getSelects = async () => {
             let selects = await Ajax.WorkScheduleItem.getSelects();
+            console.log('selects', selects)
             return selects;
         }
         let objectsList = new ObjectsList(datasource, 'calendarView');
@@ -79,7 +80,6 @@ export class index {
             return ret;
         }
         objectsList.dateRowCallback = (row) => {
-            console.log('sssss', row.start)
             return new Date(row.start);
         };
         objectsList.colorRowCallback = (row) => {
