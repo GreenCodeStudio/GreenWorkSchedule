@@ -28,10 +28,6 @@
             <element>user_id</element>
         </index>
         <index>
-            <type>INDEX</type>
-            <element>work_schedule_id</element>
-        </index>
-        <index>
             <type>FOREIGN</type>
             <element>user_id</element>
             <reference name="user">
