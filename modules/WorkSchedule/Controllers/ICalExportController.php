@@ -21,8 +21,8 @@ class ICalExportController extends \Common\PageStandardController
             ->setDescription('Test desc...')
             ->setOccurrence(
                 new \Eluceo\iCal\Domain\ValueObject\TimeSpan(
-                    new DateTime(),
-                    (new DateTime())->modify('+1 hour')
+                    new \Eluceo\iCal\Domain\ValueObject\DateTime(new \DateTime(), false),
+                    new \Eluceo\iCal\Domain\ValueObject\DateTime(new \DateTime()->modify('+1 hour'), false),
                 )
             );
 
