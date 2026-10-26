@@ -166,10 +166,10 @@
   dependencies:
     "@xmldom/xmldom" "^0.8.11"
 
-"@green-code-studio/objects-list@^1.14.8":
-  version "1.14.9"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.14.9.tgz#462d8c8d33f4cf25910abf37bae73d3e22ca0009"
-  integrity sha512-wrOjHf7uLH9qd+BQoM8OlLoZL3BZFKwWRspg4Hm+jM6LwRVpcYPCbkrQtOgjbNSXxIfQd2bXs+heTcDja9yFZw==
+"@green-code-studio/objects-list@^1.10.1":
+  version "1.14.11"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.14.11.tgz#4b6b72613133a05f65c07cb02d9d52e33c9c487f"
+  integrity sha512-9LjNP2BIk+u5a1BA7WKnbhyjkhtzj/V2N/xMdCXtxEkM9J1KEXPlzgf0NnqYBhNGVt73pv1Lq6MPqnqRxZtTqg==
   dependencies:
     "@green-code-studio/context-menu" "^1.0.2"
     "@green-code-studio/internationalization" "^1.0.4"
@@ -1221,7 +1221,7 @@ base64-js@^1.5.1:
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
-baseline-browser-mapping@^2.11.29:
+baseline-browser-mapping@^2.11.33:
   version "2.11.33"
   resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.33.tgz#117253b1d92cc6e1dd9a8aa5a53d9da916b984ad"
   integrity sha512-yiVKDX+qCMRKBE084lXvq9EcwFUhKZ2nU8TK1EQQuOgPNR/lmbGxXOeDdlGUqC2Zz11Cs9rk1d/8NfgBmlkt0w==
@@ -1239,14 +1239,14 @@ brace-expansion@^5.0.8:
     balanced-match "^4.0.2"
 
 browserslist@^4.24.0, browserslist@^4.28.1:
-  version "4.29.4"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.29.4.tgz#c1efdbce30bc57a44e5a4bd849ff8e64d6a141b2"
-  integrity sha512-2TcbbiwXEq+N0kD36tykpCfyyQigUXmuwNQbnPp4Xk4PX9JOqVIKjJlIDjpH7uY6tmRGoAd+apeT1p60T8wsdA==
+  version "4.29.5"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.29.5.tgz#e835ff9a00f683305b33f02828c908b397410d4a"
+  integrity sha512-khTmKu5NGYTotqcYo8Bew2k4RAE9PuXRSFRXG2lQBrCEQHyeQ/vX6gKMxfokwywBsLiXZMnHsmWMG1pnO8J7uQ==
   dependencies:
-    baseline-browser-mapping "^2.11.29"
-    caniuse-lite "^1.0.30001816"
-    electron-to-chromium "^1.5.459"
-    node-releases "^2.0.59"
+    baseline-browser-mapping "^2.11.33"
+    caniuse-lite "^1.0.30001819"
+    electron-to-chromium "^1.5.464"
+    node-releases "^2.0.60"
     update-browserslist-db "^1.3.4"
 
 buffer-from@^1.0.0:
@@ -1285,7 +1285,7 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30001816:
+caniuse-lite@^1.0.30001819:
   version "1.0.30001819"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001819.tgz#4a0f8d7552a15909ce8a0c1dc2ccad9c8c0fab9d"
   integrity sha512-LFUqIIAwpzsIuevnKnsR9qnStBcgzPShTX61lBwN9uFkkf8o8zLiebEjbW8AYtZiF+1YKDWfdt/pWDtMuG8Xwg==
@@ -1520,7 +1520,7 @@ dunder-proto@^1.0.1:
     es-errors "^1.3.0"
     gopd "^1.2.0"
 
-electron-to-chromium@^1.5.459:
+electron-to-chromium@^1.5.464:
   version "1.5.464"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.464.tgz#dd0d56e63f35f2c2a1c36c06efd79fa017587a46"
   integrity sha512-nRa65aFge40viPAKxMKULIY8tcXKwKboJWNn4RoKwyWXJ6SP7BnrDGKUTzc64818jIciH0PK7LSF8QzZes19GA==
@@ -2389,7 +2389,7 @@ node-gyp-build@^4.8.0, node-gyp-build@^4.8.2, node-gyp-build@^4.8.4:
   resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.8.4.tgz#8a70ee85464ae52327772a90d66c6077a900cfc8"
   integrity sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==
 
-node-releases@^2.0.59:
+node-releases@^2.0.60:
   version "2.0.60"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.60.tgz#e3104c3ceb4530578f546bcfda551a4a2de06939"
   integrity sha512-OmO8+GM1JUZqXET720VrJCwkjUCXmCMQm0Z3UDDRbfNLHS4NEAvY60j5jiFv0tkKw2PNNlqOLhahVmwJIOLDIQ==

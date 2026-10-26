@@ -116,7 +116,12 @@ export class index {
         objectsList.addEventListener('drop', async (event) => {
             console.log('drop event', event);
             event.preventDefault();
-            console.log(event.dataTransfer.getData('application/objects-list-data'))
+            const data = JSON.parse(event.dataTransfer.getData('application/objects-list-data'));
+            if (data.length == 1 && event.day) {
+                if (data[0].href.includes('/WorkScheduleItem/')) {
+                    pageManager.goto(`/WorkScheduleItem/add?date=${event.day.toISOString().substring(0, 10)}&user_id=${data[0].item.user_id}&start=${data[0].item.start.substring(11, 16)}&end=${data[0].item.end.substring(11, 16)}`);
+                }
+            }
         });
     }
 }
@@ -143,10 +148,11 @@ export class edit {
 export class add {
     constructor(page, data) {
         let form = new FormManager(page.querySelector('form'));
-        form.loadUrlQuery();
-        if (data && data.selects)
+        if (data && data.selects) {
             form.loadSelects(data.selects);
+        }
 
+        form.loadUrlQuery();
         form.submit = async newData => {
             await Ajax.WorkScheduleItem.insert(newData);
             pageManager.goto('/WorkScheduleItem?date=' + newData.date);
