@@ -2,6 +2,7 @@
 
 namespace WorkSchedule;
 
+use Eluceo\iCal\Domain\ValueObject\EmailAddress;
 use MKrawczyk\FunQuery\FunQuery;
 use WorkSchedule\Repository\ICalTokenRepository;
 use WorkSchedule\Repository\WorkScheduleItemRepository;
@@ -37,8 +38,10 @@ class ICalExporter
         }
         $events = FunQuery::from($workScheduleItems)->map(function ($item) {
             return (new \Eluceo\iCal\Domain\Entity\Event())
-                ->setSummary('Test')
+                ->setSummary($item->user_name . ' ' . $item->user_surname)
                 ->setDescription('Test desc...')
+                ->addAttendee(new \Eluceo\iCal\Domain\Entity\Attendee(new EmailAddress('example@example.com')))
+                ->setUrl( new \Eluceo\iCal\Domain\ValueObject\Uri((($_SERVER['HTTPS']??false) ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].'/workScheduleItem/show/'.$item->id))
                 ->setOccurrence(
                     new \Eluceo\iCal\Domain\ValueObject\TimeSpan(
                         new \Eluceo\iCal\Domain\ValueObject\DateTime(new \DateTime($item->start), false),
