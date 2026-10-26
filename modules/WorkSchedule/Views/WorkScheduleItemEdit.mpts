@@ -29,6 +29,12 @@
             <span>{{t("WorkSchedule.WorkScheduleItem.end")}}</span>
             <input type="time" step="any" name="end" required />
         </label>
+        <:if condition=type=="add" >
+            <label>
+                <span>{{t("WorkSchedule.WorkScheduleItem.comment")}}</span>
+                <textarea name="comment"  ></textarea>
+            </label>
+        </:if>
         </section>
     </div>
 </form>

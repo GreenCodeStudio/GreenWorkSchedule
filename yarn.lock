@@ -166,10 +166,10 @@
   dependencies:
     "@xmldom/xmldom" "^0.8.11"
 
-"@green-code-studio/objects-list@^1.10.1":
-  version "1.14.4"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.14.4.tgz#da5741a380ccf0e5b4cbd07a7e8760f8ccd613fa"
-  integrity sha512-l+xiJ7lUNxoibjwNf4c3ZuugMj04QH6fiGtE1+JJCSrQF0DELRe4l2VqLrMttDp5aCJjPpcbcaCAattPA7ufkg==
+"@green-code-studio/objects-list@^1.14.8":
+  version "1.14.9"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.14.9.tgz#462d8c8d33f4cf25910abf37bae73d3e22ca0009"
+  integrity sha512-wrOjHf7uLH9qd+BQoM8OlLoZL3BZFKwWRspg4Hm+jM6LwRVpcYPCbkrQtOgjbNSXxIfQd2bXs+heTcDja9yFZw==
   dependencies:
     "@green-code-studio/context-menu" "^1.0.2"
     "@green-code-studio/internationalization" "^1.0.4"

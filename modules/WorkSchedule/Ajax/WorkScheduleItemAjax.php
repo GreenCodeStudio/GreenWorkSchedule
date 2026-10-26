@@ -32,6 +32,7 @@ class WorkScheduleItemAjax extends \Core\AjaxController
         $this->will('WorkScheduleItem', 'add');
         $WorkScheduleItem = new \WorkSchedule\WorkScheduleItem();
         $id = $WorkScheduleItem->insert($data);
+
     }
     public function getSelects()
     {

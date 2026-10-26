@@ -70,6 +70,13 @@
             <value lang="cs">Konec</value>
             <value lang="ua">Кінець</value>
         </node>
+        <node name="comment">
+            <value lang="en">Comment</value>
+            <value lang="pl">Komentarz</value>
+            <value lang="de">Kommentar</value>
+            <value lang="cs">Komentář</value>
+            <value lang="ua">Коментар</value>
+        </node>
     </node>
     <node name="WorkScheduleItemList">
         <node name="header">

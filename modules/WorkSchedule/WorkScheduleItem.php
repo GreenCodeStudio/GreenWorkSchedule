@@ -2,6 +2,7 @@
 
 namespace WorkSchedule;
 
+use Authorization\Authorization;
 use CommonBase\UniversalExporter\UeItem;
 use CommonBase\UniversalExporter\UniversalExporter;
 use User\Repository\UserRepository;
@@ -29,7 +30,7 @@ class WorkScheduleItem extends \Core\BussinesLogic
     protected function filterData($data)
     {
         $ret = [];
-        $ret['user_id'] = $data->user_id;
+        $ret['user_id'] = $data->user_id ?? $data->user;
         $ret['work_schedule_id'] = empty($data->work_schedule_id) ? null : $data->work_schedule_id;
         $ret['start'] = $data->date.' '.$data->start;
         $ret['end'] = $data->date.' '.$data->end;
@@ -47,6 +48,9 @@ class WorkScheduleItem extends \Core\BussinesLogic
         $filtered = $this->filterData($data);
 
         $id = $this->defaultDB->insert($filtered);
+        if (!empty($data->comment)) {
+            (new \Comment\Comment())->insert('WorkScheduleItem', $id, Authorization::getUserId(), (object)['contentPlainText' => $data->comment]);
+        }
         \Core\WebSocket\Sender::sendToUsers(["WorkSchedule", "WorkScheduleItem", "Insert", $id]);
         return $id;
     }

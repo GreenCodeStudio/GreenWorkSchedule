@@ -109,6 +109,15 @@ export class index {
         objectsList.icon = 'icon-workschedule';
         container.append(objectsList);
         objectsList.refresh();
+        objectsList.addEventListener('dragover', (event) => {
+            console.log('dragover event', event);
+            event.preventDefault();
+        })
+        objectsList.addEventListener('drop', async (event) => {
+            console.log('drop event', event);
+            event.preventDefault();
+            console.log(event.dataTransfer.getData('application/objects-list-data'))
+        });
     }
 }
 
