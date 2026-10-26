@@ -22,6 +22,7 @@
         <column>
             <name>is_archived</name>
             <type>tinyint(1)</type>
+            <default>0</default>
         </column>
         <index>
             <type>PRIMARY</type>
