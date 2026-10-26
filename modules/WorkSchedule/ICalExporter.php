@@ -37,11 +37,11 @@ class ICalExporter
             $workScheduleItems = (new WorkScheduleItemRepository())->getAll();
         }
         $events = FunQuery::from($workScheduleItems)->map(function ($item) {
+            $url = (($_SERVER['HTTPS'] ?? false) ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].'/WorkScheduleItem/show/'.$item->id;
             return (new \Eluceo\iCal\Domain\Entity\Event())
-                ->setSummary($item->user_name . ' ' . $item->user_surname)
-                ->setDescription('Test desc...')
+                ->setSummary($item->user_name.' '.$item->user_surname)
                 ->addAttendee(new \Eluceo\iCal\Domain\Entity\Attendee(new EmailAddress('example@example.com')))
-                ->setUrl( new \Eluceo\iCal\Domain\ValueObject\Uri((($_SERVER['HTTPS']??false) ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].'/workScheduleItem/show/'.$item->id))
+                ->setUrl(new \Eluceo\iCal\Domain\ValueObject\Uri($url))
                 ->setOccurrence(
                     new \Eluceo\iCal\Domain\ValueObject\TimeSpan(
                         new \Eluceo\iCal\Domain\ValueObject\DateTime(new \DateTime($item->start), false),
