@@ -27,4 +27,9 @@ class ICalTokenRepository extends \Core\Repository
     {
         return (DB::get("SELECT token FROM ical_token WHERE owner_user_id = ? AND target_user_id = ?",[$ownerUserId, $targetUserId])[0]??null)?->token;
     }
+
+    public function getByToken($token)
+    {
+        return DB::get("SELECT * FROM ical_token WHERE token = ?", [$token])[0] ?? null;
+    }
 }

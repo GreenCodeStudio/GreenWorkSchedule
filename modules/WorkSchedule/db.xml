@@ -19,6 +19,10 @@
             <name>end</name>
             <type>datetime</type>
         </column>
+        <column>
+            <name>is_archived</name>
+            <type>tinyint(1)</type>
+        </column>
         <index>
             <type>PRIMARY</type>
             <element>id</element>

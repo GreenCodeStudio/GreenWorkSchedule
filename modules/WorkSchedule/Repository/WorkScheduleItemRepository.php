@@ -52,14 +52,6 @@ JOIN user u ON u.id = wsi.user_id
         }
     }
 
-    public function getAll()
-    {
-        if ($this->archiveMode == static::ArchiveMode_OnlyExisting)
-            return DB::get("SELECT * FROM work_schedule_item WHERE is_archived = 0");
-        else
-            return DB::get("SELECT * FROM work_schedule_item");
-    }
-
     public function getForUserSummary($startRange, $endRange, $workerId)
     {
         return DB::get("SELECT * FROM work_schedule_item WHERE user_id = ? AND date(start) BETWEEN ? AND ? ORDER BY start", [$workerId, $startRange, $endRange]);
@@ -85,5 +77,20 @@ LEFT JOIN comment c ON c.object_type = 'WorkScheduleItem' AND c.object_id = wsi.
 WHERE wsi.user_id = ? AND end > NOW() 
 GROUP BY wsi.id
 ORDER BY wsi.start ASC LIMIT ".$limit, [$userId]);
+    }
+
+    public function getAllForUser($target_user_id)
+    {
+        return DB::get("SELECT wsi.*, u.name as user_name, u.surname as user_surname
+FROM work_schedule_item wsi
+JOIN user u ON u.id = wsi.user_id
+         WHERE wsi.user_id = ? AND wsi.is_archived = 0", [$target_user_id]);
+    }
+    public function getAll()
+    {
+        return DB::get("SELECT wsi.*, u.name as user_name, u.surname as user_surname
+FROM work_schedule_item wsi
+JOIN user u ON u.id = wsi.user_id
+         WHERE wsi.is_archived = 0", []);
     }
 }

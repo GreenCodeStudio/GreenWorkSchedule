@@ -103,7 +103,7 @@ class WorkScheduleItemController extends \Common\PageStandardController
     function iCal()
     {
         $keys = (new ICalExporter())->getKeys(Authorization::getUserId());
-        $this->addView('WorkSchedule', 'ICal', ['allLink' => ($_SERVER['HTTPS']??false) ? 'https://' : 'http://'.$_SERVER['HTTP_HOST'].'/ICalExport/index/'.$keys['all'],
-            'ownLink' => ($_SERVER['HTTPS']??false) ? 'https://' : 'http://'.$_SERVER['HTTP_HOST'].'/ICalExport/index/'.$keys['own']]);
+        $this->addView('WorkSchedule', 'ICal', ['allLink' =>( ($_SERVER['HTTPS']??false) ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].'/ICalExport/index/'.$keys['all'],
+            'ownLink' => (($_SERVER['HTTPS']??false) ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].'/ICalExport/index/'.$keys['own']]);
     }
 }
