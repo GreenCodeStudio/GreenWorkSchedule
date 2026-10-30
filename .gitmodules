@@ -34,3 +34,6 @@
 [submodule "modules/File"]
 	path = modules/File
 	url = https://github.com/GreenCodeStudio/GreenCodeFramework-File.git
+[submodule "modules/LogCollector"]
+	path = modules/LogCollector
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-LogCollector.git

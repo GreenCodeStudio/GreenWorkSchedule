@@ -10,6 +10,7 @@
         "ExternalApplication": "https://github.com/GreenCodeStudio/GreenCodeFramework-Externalapplication.git",
         "Chat": "https://github.com/GreenCodeStudio/GreenCodeFramework-Chat.git",
         "WorkTask": "https://github.com/GreenCodeStudio/GreenCodeFramework-WorkTask.git",
-        "File": "https://github.com/GreenCodeStudio/GreenCodeFramework-File.git"
+        "File": "https://github.com/GreenCodeStudio/GreenCodeFramework-File.git",
+        "LogCollector":  "https://github.com/GreenCodeStudio/GreenCodeFramework-LogCollector.git"
     }
 }
