@@ -31,3 +31,6 @@
 [submodule "modules/WorkTask"]
 	path = modules/WorkTask
 	url = https://github.com/GreenCodeStudio/GreenCodeFramework-WorkTask.git
+[submodule "modules/File"]
+	path = modules/File
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-File.git
