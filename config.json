@@ -11,6 +11,7 @@
         "Chat": "https://github.com/GreenCodeStudio/GreenCodeFramework-Chat.git",
         "WorkTask": "https://github.com/GreenCodeStudio/GreenCodeFramework-WorkTask.git",
         "File": "https://github.com/GreenCodeStudio/GreenCodeFramework-File.git",
-        "LogCollector":  "https://github.com/GreenCodeStudio/GreenCodeFramework-LogCollector.git"
+        "LogCollector":  "https://github.com/GreenCodeStudio/GreenCodeFramework-LogCollector.git",
+        "CustomData": "https://github.com/GreenCodeStudio/GreenCodeFramework-CustomData.git"
     }
 }

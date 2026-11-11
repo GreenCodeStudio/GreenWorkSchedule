@@ -37,3 +37,6 @@
 [submodule "modules/LogCollector"]
 	path = modules/LogCollector
 	url = https://github.com/GreenCodeStudio/GreenCodeFramework-LogCollector.git
+[submodule "modules/CustomData"]
+	path = modules/CustomData
+	url = https://github.com/GreenCodeStudio/GreenCodeFramework-CustomData.git

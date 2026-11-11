@@ -7,6 +7,7 @@ import  "./modules/Comment/js/index";
 import  "./modules/Common/js/index";
 import  "./modules/CommonBase/js/index";
 import  "./modules/Core/js/index";
+import  "./modules/CustomData/js/index";
 import  "./modules/ExternalApplication/js/index";
 import  "./modules/LogCollector/js/index";
 import  "./modules/Search/js/index";
