@@ -42,7 +42,7 @@ class WorkScheduleItemController extends \Common\PageStandardController
         $this->will('WorkScheduleItem', 'edit');
         $this->addView('WorkSchedule', 'WorkScheduleItemEdit', ['type' => 'edit']);
         $this->pushBreadcrumb(['title' => 'WorkScheduleItem', 'url' => '/WorkScheduleItem']);
-        $this->pushBreadcrumb(['title' => 'Edycja', 'url' => '/WorkScheduleItem/edit/'.$id]);
+        $this->pushBreadcrumb(['title' => t('CommonBase.breadcrumb.edit'), 'url' => '/WorkScheduleItem/edit/'.$id]);
     }
 
     function edit_data(int $id)
@@ -63,7 +63,7 @@ class WorkScheduleItemController extends \Common\PageStandardController
         $this->will('WorkScheduleItem', 'add');
         $this->addView('WorkSchedule', 'WorkScheduleItemEdit', ['type' => 'add']);
         $this->pushBreadcrumb(['title' => 'WorkScheduleItem', 'url' => '/WorkScheduleItem']);
-        $this->pushBreadcrumb(['title' => 'Dodaj', 'url' => '/WorkScheduleItem/add']);
+        $this->pushBreadcrumb(['title' => t('CommonBase.breadcrumb.add'), 'url' => '/WorkScheduleItem/add']);
     }
 
     function add_data()
@@ -88,7 +88,7 @@ class WorkScheduleItemController extends \Common\PageStandardController
 
         $this->addView('WorkSchedule', 'WorkScheduleItemShow', ['item' => $data, 'commentsData' => ['items'=>$comments]]);
         $this->pushBreadcrumb(['title' => 'WorkScheduleItem', 'url' => '/WorkScheduleItem']);
-        $this->pushBreadcrumb(['title' => 'Szczegóły', 'url' => '/WorkScheduleItem/show/'.$id]);
+        $this->pushBreadcrumb(['title' => t('CommonBase.breadcrumb.show'), 'url' => '/WorkScheduleItem/show/'.$id]);
     }
 
     public function export()

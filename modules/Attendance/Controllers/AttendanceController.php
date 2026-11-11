@@ -27,7 +27,7 @@ class AttendanceController extends \Common\PageStandardController
         $this->will('Attendance', 'add');
         $this->addView('Attendance', 'AttendanceAdd', ['type' => 'add']);
         $this->pushBreadcrumb(['title' => 'Attendance', 'url' => '/Attendance']);
-        $this->pushBreadcrumb(['title' => 'Dodaj', 'url' => '/Attendance/add']);
+        $this->pushBreadcrumb(['title' => t('CommonBase.breadcrumb.add'), 'url' => '/Attendance/add']);
     }
     function add_data()
     {
@@ -49,7 +49,7 @@ class AttendanceController extends \Common\PageStandardController
         $comments=(new Comment())->getToShow('Attendance', $id);
         $this->addView('Attendance', 'AttendanceShow', ['item' => $data, 'comments' => ['items'=>$comments]]);
         $this->pushBreadcrumb(['title' => 'Attendance', 'url' => '/Attendance']);
-        $this->pushBreadcrumb(['title' => 'Szczegóły', 'url' => '/Attendance/show/'.$id]);
+        $this->pushBreadcrumb(['title' => t('CommonBase.breadcrumb.show'), 'url' => '/Attendance/show/'.$id]);
     }
 
     function me()
