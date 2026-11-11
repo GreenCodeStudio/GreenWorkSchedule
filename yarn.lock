@@ -153,9 +153,9 @@
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
 "@green-code-studio/context-menu@^1.0.0", "@green-code-studio/context-menu@^1.0.2":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/context-menu/-/context-menu-1.0.4.tgz#68b32507ac6ce0c449603cb701eb8d297a57db9e"
-  integrity sha512-DYxMNzLxqCwYdDPX6cVs2h91IKFJ/cq7c1i+9KrR6fLovfoGgntMqd4VLb5LFITnZ6ztpcgMWPWFKa5sIeN9Ew==
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/context-menu/-/context-menu-1.0.5.tgz#16ce420b76818801535afe3a5344a69e4ceda264"
+  integrity sha512-0hGI2O/kbXZv8unDGfQpNGITblFwyTd6xI7E3vnEuS3MuTucZIN10hkb/658oWDd9e+X9layGaxZheKlk4tIYw==
   dependencies:
     fast-creator "^1.6.0"
 
