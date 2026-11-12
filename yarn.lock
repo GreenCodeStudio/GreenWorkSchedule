@@ -153,9 +153,9 @@
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
 "@green-code-studio/context-menu@^1.0.0", "@green-code-studio/context-menu@^1.0.2":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/context-menu/-/context-menu-1.0.5.tgz#16ce420b76818801535afe3a5344a69e4ceda264"
-  integrity sha512-0hGI2O/kbXZv8unDGfQpNGITblFwyTd6xI7E3vnEuS3MuTucZIN10hkb/658oWDd9e+X9layGaxZheKlk4tIYw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/context-menu/-/context-menu-1.0.7.tgz#09811845f98949068f24ec6331bfc370a19d59d2"
+  integrity sha512-n+KBQDQZDVj8lAG825i45apmnKrz5WLzq7LqREb3k267eMyzx2ccsNHwaoc0wSPnMZbgb9/LJb7g1dXLxgN8KA==
   dependencies:
     fast-creator "^1.6.0"
 
@@ -167,9 +167,9 @@
     "@xmldom/xmldom" "^0.8.11"
 
 "@green-code-studio/objects-list@^1.10.1":
-  version "1.14.12"
-  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.14.12.tgz#3d53b92291b3ddd6ef6884106c8e3300b61a943c"
-  integrity sha512-THFS9bFP+WZp+j5QPJ3xr+jSG7Jid3ZU+l1U9xYSsUdOqwdBd0fXEguGB24Kw3MK64mrW8LG1oHo7slCoOz2Lw==
+  version "1.14.18"
+  resolved "https://registry.yarnpkg.com/@green-code-studio/objects-list/-/objects-list-1.14.18.tgz#19f5f0bc075b20746f2bf50fbfe8df4dfe45d14c"
+  integrity sha512-YQD5iXMKPq24nXqM4eCORCDWwY7Tx5sUSe2bJeFLsta+KPSFnVKTfAf0HKTrMFZottEeDTvIMchIG3ihGO+3cg==
   dependencies:
     "@green-code-studio/context-menu" "^1.0.2"
     "@green-code-studio/internationalization" "^1.0.4"
